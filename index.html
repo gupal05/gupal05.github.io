@@ -4,8 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>황영호 포트폴리오 | Backend Developer</title>
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://kit.fontawesome.com/a2b4d6c7f3.js" crossorigin="anonymous"></script>
+
+  <!-- Devicon (기술 로고 아이콘 세트) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
   <style>
     html { scroll-behavior: smooth; }
     body { background-color: #f9fafb; color: #1e293b; }
@@ -14,7 +19,6 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .hover-link:hover { color: #64748B; transition: color 0.3s ease; }
     .project-card:hover {
       transform: translateY(-4px);
       background-color: #ffffff;
@@ -34,8 +38,8 @@
       <p class="text-gray-500 text-sm mb-4">Backend Developer</p>
       <div class="text-xs text-gray-600 text-center space-y-1">
         <p>📍 경기도 시흥시 신흥마을1길 33</p>
-        <p>📧 <a href="mailto:dudgh2349@naver.com" class="hover-link">dudgh2349@naver.com</a></p>
-        <p>🐙 <a href="https://github.com/gupal05" target="_blank" class="hover-link">github.com/gupal05</a></p>
+        <p>📧 <a href="mailto:dudgh2349@naver.com" class="hover:underline">dudgh2349@naver.com</a></p>
+        <p>🐙 <a href="https://github.com/gupal05" target="_blank" class="hover:underline">github.com/gupal05</a></p>
       </div>
     </aside>
 
@@ -75,41 +79,53 @@
       <!-- Skills -->
       <section class="fade-in">
         <h2 class="text-2xl font-semibold mb-6 border-b border-gray-300 inline-block pb-2">Skills</h2>
+        
         <div class="grid md:grid-cols-3 gap-8">
-          
           <!-- Backend -->
           <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
-            <h3 class="text-gray-700 font-semibold mb-4 flex items-center gap-2">
-              <i class="fa-solid fa-server text-gray-500"></i> Backend
-            </h3>
-            <ul class="space-y-2 text-sm text-gray-700">
-              <li><i class="fa-brands fa-java text-gray-500 mr-2"></i>Java</li>
-              <li><i class="fa-solid fa-leaf text-gray-500 mr-2"></i>Spring Boot / JPA / MyBatis</li>
-              <li><i class="fa-solid fa-code-branch text-gray-500 mr-2"></i>RESTful API 설계</li>
+            <h3 class="text-gray-700 font-semibold mb-4">Backend</h3>
+            <ul class="space-y-3 text-sm text-gray-700">
+              <li class="flex items-center space-x-3">
+                <i class="devicon-java-plain colored text-2xl"></i><span>Java</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="devicon-spring-plain colored text-2xl"></i><span>Spring Boot / JPA / MyBatis</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="devicon-postgresql-plain colored text-2xl"></i><span>MySQL / PostgreSQL</span>
+              </li>
             </ul>
           </div>
 
           <!-- Infra -->
           <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
-            <h3 class="text-gray-700 font-semibold mb-4 flex items-center gap-2">
-              <i class="fa-solid fa-cloud text-gray-500"></i> Infra / DevOps
-            </h3>
-            <ul class="space-y-2 text-sm text-gray-700">
-              <li><i class="fa-brands fa-docker text-gray-500 mr-2"></i>Docker / Docker Compose</li>
-              <li><i class="fa-brands fa-aws text-gray-500 mr-2"></i>AWS (EC2, RDS, S3)</li>
-              <li><i class="fa-solid fa-repeat text-gray-500 mr-2"></i>GitHub Actions / CI-CD</li>
+            <h3 class="text-gray-700 font-semibold mb-4">Infra / DevOps</h3>
+            <ul class="space-y-3 text-sm text-gray-700">
+              <li class="flex items-center space-x-3">
+                <i class="devicon-docker-plain colored text-2xl"></i><span>Docker / Docker Compose</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="devicon-amazonwebservices-plain colored text-2xl"></i><span>AWS (EC2, RDS, S3)</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="devicon-githubactions-plain colored text-2xl"></i><span>CI/CD with GitHub Actions</span>
+              </li>
             </ul>
           </div>
 
           <!-- Collaboration -->
           <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
-            <h3 class="text-gray-700 font-semibold mb-4 flex items-center gap-2">
-              <i class="fa-solid fa-users text-gray-500"></i> Collaboration
-            </h3>
-            <ul class="space-y-2 text-sm text-gray-700">
-              <li><i class="fa-brands fa-git-alt text-gray-500 mr-2"></i>Git / GitHub</li>
-              <li><i class="fa-solid fa-clipboard-check text-gray-500 mr-2"></i>JMeter / Swagger</li>
-              <li><i class="fa-solid fa-comments text-gray-500 mr-2"></i>Notion / Slack / Figma</li>
+            <h3 class="text-gray-700 font-semibold mb-4">Collaboration</h3>
+            <ul class="space-y-3 text-sm text-gray-700">
+              <li class="flex items-center space-x-3">
+                <i class="devicon-git-plain colored text-2xl"></i><span>Git / GitHub</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="devicon-figma-plain colored text-2xl"></i><span>Figma / Notion / Slack</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fa-solid fa-vial text-gray-500 text-xl"></i><span>JMeter / Swagger</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -159,5 +175,8 @@
       </footer>
     </main>
   </div>
+
+  <!-- FontAwesome (About 섹션용) -->
+  <script src="https://kit.fontawesome.com/a2b4d6c7f3.js" crossorigin="anonymous"></script>
 </body>
 </html>
