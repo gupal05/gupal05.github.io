@@ -5,30 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hollybam 프로젝트 포트폴리오 | 황영호</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      background-color: #f9fafb;
-      color: #1f2937;
-      font-family: 'Noto Sans KR', sans-serif;
-      line-height: 1.7;
-    }
+    body { background-color: #f9fafb; color: #1f2937; font-family: 'Noto Sans KR', sans-serif; line-height: 1.7; }
     section { padding: 80px 0; }
-    .section-title {
-      font-size: 1.875rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
-      border-left: 5px solid #3b82f6;
-      padding-left: 12px;
-    }
-    .gradient-text {
-      background: linear-gradient(90deg, #2563eb, #7c3aed);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    .section-title { font-size: 1.875rem; font-weight: 700; margin-bottom: 2rem; border-left: 5px solid #3b82f6; padding-left: 12px; }
+    .gradient-bg { background: linear-gradient(120deg, #2563eb 0%, #7c3aed 100%); color: white; }
+    .btn-primary { background-color: white; color: #2563eb; font-weight: 600; padding: 12px 24px; border-radius: 8px; transition: all 0.3s ease; }
+    .btn-primary:hover { background-color: #f1f5f9; transform: translateY(-2px); }
+    .tag { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; margin: 4px; }
 
-    /* Image Gallery */
     .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
     .img-card { position: relative; overflow: hidden; border-radius: 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); background: white; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
     .img-card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
@@ -37,61 +23,49 @@
     .img-caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.55); color: white; padding: 10px 14px; font-size: 0.9rem; opacity: 0; transition: opacity 0.3s ease; }
     .img-card:hover .img-caption { opacity: 1; }
 
-    /* Modal Popup */
     .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); justify-content: center; align-items: center; }
     .modal img { max-width: 90%; max-height: 85%; border-radius: 10px; box-shadow: 0 0 25px rgba(255,255,255,0.2); }
     .modal.active { display: flex; animation: fadeIn 0.4s ease; }
     @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
 
-    /* Architecture Diagram */
-    .diagram {
-      position: relative;
-      background: white;
-      border-radius: 16px;
-      padding: 40px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
-      text-align: center;
-    }
-    .diagram-box {
-      display: inline-block;
-      background: #eff6ff;
-      color: #1e3a8a;
-      font-weight: 600;
-      border-radius: 12px;
-      padding: 12px 20px;
-      margin: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-    .arrow {
-      font-size: 1.5rem;
-      color: #6b7280;
-      margin: 0 8px;
-    }
+    .diagram { position: relative; background: white; border-radius: 16px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.07); text-align: center; }
+    .diagram-box { display: inline-block; background: #eff6ff; color: #1e3a8a; font-weight: 600; border-radius: 12px; padding: 12px 20px; margin: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+    .arrow { font-size: 1.5rem; color: #6b7280; margin: 0 8px; }
 
-    footer {
-      background: #111827;
-      color: #9ca3af;
-      font-size: 0.9rem;
-    }
+    footer { background: #111827; color: #9ca3af; font-size: 0.9rem; }
   </style>
 </head>
 
 <body>
-  <!-- Header -->
-  <header class="bg-white py-10 shadow-sm text-center">
-    <h1 class="text-4xl font-bold mb-3 gradient-text">Hollybam — 프리미엄 쇼핑몰 플랫폼</h1>
-    <p class="text-gray-600">2024.03 ~ 2025.01 | 개인 프로젝트 | Spring Boot · MyBatis · AWS · Docker · CI/CD</p>
-    <a href="https://holly-bam.com" target="_blank" class="inline-block mt-3 text-blue-700 font-semibold hover:underline">🔗 실제 서비스 바로가기</a>
-  </header>
+  <!-- Hero Section -->
+  <section class="gradient-bg py-20 text-center">
+    <div class="container mx-auto px-6">
+      <h1 class="text-5xl font-extrabold mb-4">Hollybam 프로젝트</h1>
+      <p class="text-lg opacity-90 mb-6">실제 상용 서비스 | Spring Boot · Thymeleaf · AWS · Docker</p>
+      <a href="https://holly-bam.com" target="_blank" class="btn-primary">🔗 현재 운영 중인 사이트로 이동</a>
+
+      <div class="mt-8">
+        <span class="tag">Spring Boot</span>
+        <span class="tag">Thymeleaf</span>
+        <span class="tag">Spring Security</span>
+        <span class="tag">MySQL (RDS)</span>
+        <span class="tag">AWS EC2</span>
+        <span class="tag">S3</span>
+        <span class="tag">Docker</span>
+        <span class="tag">CI/CD</span>
+        <span class="tag">Nginx</span>
+      </div>
+    </div>
+  </section>
 
   <!-- 프로젝트 개요 -->
   <section class="container mx-auto px-6">
     <h2 class="section-title">프로젝트 개요</h2>
     <p class="text-gray-700 mb-6">
-      <strong>Hollybam</strong>은 성인 인증을 기반으로 한 프리미엄 쇼핑몰 플랫폼입니다.  
-      인증되지 않은 사용자는 인트로 페이지만 접근할 수 있도록 설계된 <b>고보안 구조</b>를 가지고 있으며,  
-      상품 관리, 결제, 주문, 리뷰, 관리자 페이지 등 전자상거래의 모든 요소를 직접 설계하고 구현했습니다.  
-      또한 AWS 기반의 클라우드 인프라를 구축하여 <b>실제 상용 서비스</b>로 운영 중입니다.
+      <strong>Hollybam</strong>은 (주)혜안파트너스의 사업으로 진행된 실제 상용 서비스입니다.<br>
+      성인 인증을 기반으로 한 프리미엄 쇼핑몰로, 인증되지 않은 사용자는 인트로 페이지만 접근 가능하며  
+      회원/비회원 주문, 장바구니, 리뷰, 결제 등 전자상거래 기능 전반을 구현했습니다.<br>
+      서비스의 모든 백엔드 설계, 배포, 운영을 단독으로 수행하였으며, 현재 실제 고객이 이용 중입니다.
     </p>
   </section>
 
@@ -99,47 +73,31 @@
   <section class="container mx-auto px-6">
     <h2 class="section-title">⚙️ 기술 설계 및 구현</h2>
     <div class="space-y-6 text-gray-700 leading-relaxed">
-
       <div>
-        <h3 class="font-semibold text-lg mb-1">1️⃣ Spring Boot + MyBatis 기반 백엔드 구조</h3>
-        <p>
-          ORM의 자동화보다 명확한 SQL 제어가 필요하다고 판단하여 MyBatis를 선택했습니다.<br>
-          Service-DAO 구조를 통해 트랜잭션 단위를 세분화하였고, 대량 데이터 처리 시 성능을 위해 <b>batch insert/update</b> 기능을 사용했습니다.
-        </p>
+        <h3 class="font-semibold text-lg mb-1">1️⃣ MVC 구조 기반 백엔드 설계</h3>
+        <p>Spring Boot MVC 패턴으로 Controller, Service, DAO를 분리하여 유지보수성을 높였습니다.  
+        SQL은 Mapper XML로 관리하며, Service 단에서 비즈니스 로직을 처리하도록 구조화했습니다.</p>
       </div>
-
       <div>
-        <h3 class="font-semibold text-lg mb-1">2️⃣ JWT 기반 인증 및 본인인증 연동</h3>
-        <p>
-          자체 회원 로그인은 <b>JWT 토큰 인증</b>으로 구현하고, 비회원 접근 제한을 위해 <b>NICE 본인인증 API</b>를 연동했습니다.<br>
-          인증이 완료되지 않은 사용자는 Spring Security의 <code>OncePerRequestFilter</code>로 모든 페이지 접근이 차단됩니다.
-        </p>
+        <h3 class="font-semibold text-lg mb-1">2️⃣ 세션 기반 인증 및 보안 강화</h3>
+        <p>Spring Security 기반으로 세션 인증을 구현하고 비밀번호는 BCrypt로 암호화했습니다.  
+        NICE 본인인증 API를 통해 성인 인증을 진행하며, 인증되지 않은 사용자는 서비스 접근이 제한됩니다.</p>
       </div>
-
       <div>
-        <h3 class="font-semibold text-lg mb-1">3️⃣ 결제 및 주문 처리</h3>
-        <p>
-          <b>PG사 API</b>를 이용한 카드 결제 및 포인트 결제를 구현했습니다.<br>
-          결제 승인 후 데이터 정합성을 위해 <b>트랜잭션 + 로그 테이블</b> 이중 구조를 적용하여 장애 복구 시에도 주문 내역이 유지되도록 설계했습니다.
-        </p>
+        <h3 class="font-semibold text-lg mb-1">3️⃣ 결제 시스템 구축</h3>
+        <p>PG사(레드커머스) API를 연동하여 카드 결제 및 간편 결제를 지원했습니다.  
+        결제 과정의 상태와 오류는 <code>payment_log</code> 테이블에 저장되어 장애 대응이 용이합니다.</p>
       </div>
-
       <div>
-        <h3 class="font-semibold text-lg mb-1">4️⃣ AWS 기반 인프라</h3>
-        <p>
-          EC2(Nginx + Spring Boot + Certbot), RDS(MySQL), S3(이미지 저장소)로 구성했습니다.<br>
-          <b>Docker Compose</b>로 서비스 컨테이너를 관리하고, <b>GitHub Actions</b>를 통해 main 브랜치 push 시 자동 배포(CI/CD)가 이루어집니다.
-        </p>
+        <h3 class="font-semibold text-lg mb-1">4️⃣ 배포 및 인프라</h3>
+        <p>AWS EC2 환경에서 Docker Compose로 Nginx, Certbot, Spring Boot 컨테이너를 관리했습니다.  
+        GitHub Actions로 main 브랜치 병합 시 자동 배포되도록 CI/CD 파이프라인을 구성했습니다.</p>
       </div>
-
       <div>
         <h3 class="font-semibold text-lg mb-1">5️⃣ SEO 및 접근성</h3>
-        <p>
-          인트로 페이지만 색인 대상으로 설정하고 Open Graph, Twitter Card 메타 태그를 적용하여 검색 노출 품질을 향상시켰습니다.<br>
-          Lighthouse 기준 접근성/SEO 점수 90점 이상을 유지합니다.
-        </p>
+        <p>인트로 페이지만 색인 대상으로 지정하고 meta/OG 태그를 구성해  
+        Google Search Console 및 SNS 공유 시 미리보기 최적화를 완료했습니다.</p>
       </div>
-
     </div>
   </section>
 
@@ -152,13 +110,13 @@
         <div class="arrow">⬇</div>
         <div class="diagram-box">Nginx Reverse Proxy</div>
         <div class="arrow">⬇</div>
-        <div class="diagram-box">Spring Boot API Server (Docker)</div>
+        <div class="diagram-box">Spring Boot MVC App (Docker)</div>
         <div class="arrow">⬇</div>
         <div class="diagram-box">MySQL (RDS)</div>
         <div class="arrow">➡</div>
-        <div class="diagram-box">S3 Storage (Image Upload)</div>
+        <div class="diagram-box">S3 Storage (이미지 업로드)</div>
       </div>
-      <p class="text-gray-500 text-sm mt-5">CI/CD: GitHub Actions → Docker Build → EC2 배포 자동화</p>
+      <p class="text-gray-500 text-sm mt-5">CI/CD: GitHub Actions → Docker Build → EC2 자동 배포</p>
     </div>
   </section>
 
@@ -167,15 +125,15 @@
     <div class="container mx-auto px-6">
       <h2 class="section-title">📸 화면 미리보기</h2>
       <div class="gallery">
-        <div class="img-card"><img src="/assets/hollybam/intro.png" alt="인트로 페이지"><div class="img-caption">인트로 페이지 — 브랜드 소개 및 인증 진입</div></div>
-        <div class="img-card"><img src="/assets/hollybam/auth1.png" alt="본인인증 1"><div class="img-caption">본인인증 — 정보 입력</div></div>
-        <div class="img-card"><img src="/assets/hollybam/auth2.png" alt="본인인증 2"><div class="img-caption">본인인증 완료</div></div>
-        <div class="img-card"><img src="/assets/hollybam/main.png" alt="메인 화면"><div class="img-caption">메인 페이지 — 상품 리스트</div></div>
-        <div class="img-card"><img src="/assets/hollybam/order1.png" alt="주문서 1"><div class="img-caption">주문서 — 배송지 입력</div></div>
-        <div class="img-card"><img src="/assets/hollybam/order2.png" alt="주문서 2"><div class="img-caption">주문서 — 결제 수단 선택</div></div>
-        <div class="img-card"><img src="/assets/hollybam/payment1.png" alt="결제 1"><div class="img-caption">결제 — PG 결제창</div></div>
-        <div class="img-card"><img src="/assets/hollybam/payment2.png" alt="결제 완료"><div class="img-caption">결제 완료 화면</div></div>
-        <div class="img-card"><img src="/assets/hollybam/admin.png" alt="관리자 대시보드"><div class="img-caption">관리자 대시보드 — 회원/주문/매출 현황</div></div>
+        <div class="img-card"><img src="/assets/hollybam/intro.png" alt="인트로 페이지"><div class="img-caption">인트로 페이지 — 브랜드 소개 및 성인인증 진입</div></div>
+        <div class="img-card"><img src="/assets/hollybam/auth1.png" alt="본인인증 1"><div class="img-caption">본인인증 — 정보 입력 화면</div></div>
+        <div class="img-card"><img src="/assets/hollybam/auth2.png" alt="본인인증 2"><div class="img-caption">본인인증 완료 화면</div></div>
+        <div class="img-card"><img src="/assets/hollybam/main.png" alt="메인 화면"><div class="img-caption">메인 페이지 — 상품 목록 및 배너</div></div>
+        <div class="img-card"><img src="/assets/hollybam/order1.png" alt="주문서 1"><div class="img-caption">주문서 작성 — 배송지 입력</div></div>
+        <div class="img-card"><img src="/assets/hollybam/order2.png" alt="주문서 2"><div class="img-caption">주문서 작성 — 결제 수단 선택</div></div>
+        <div class="img-card"><img src="/assets/hollybam/payment1.png" alt="결제 1"><div class="img-caption">결제창 — 카드 결제 선택 화면</div></div>
+        <div class="img-card"><img src="/assets/hollybam/payment2.png" alt="결제 2"><div class="img-caption">결제 진행 화면</div></div>
+        <div class="img-card"><img src="/assets/hollybam/admin.png" alt="관리자 대시보드"><div class="img-caption">관리자 대시보드 — 주문 및 회원 관리</div></div>
       </div>
     </div>
   </section>
@@ -184,13 +142,14 @@
   <section class="container mx-auto px-6 mt-20">
     <h2 class="section-title">💡 프로젝트 회고</h2>
     <p class="text-gray-700 leading-relaxed">
-      이 프로젝트는 단순히 코드를 작성하는 수준을 넘어, 기획부터 배포까지 모든 과정을 스스로 주도한 경험이었습니다.<br>
-      특히 <b>배포 자동화, 데이터 정합성, 인증 체계</b>를 직접 설계하며 백엔드 엔지니어로서의 문제 해결 능력을 크게 향상시켰습니다.<br>
-      추후 Redis 캐싱과 Kafka를 도입해 확장성과 처리 속도를 강화할 계획입니다.
+      <b>Hollybam</b>은 <b>(주)혜안파트너스</b>에서 진행된 실제 상용 서비스 프로젝트입니다.<br>
+      초기 기획부터 DB 모델링, 서버 구축, 배포 및 유지보수까지 전 과정을 직접 주도했습니다.<br><br>
+      단순히 기능을 구현하는 것을 넘어, 트래픽 대응, 트랜잭션 안정화, CI/CD 자동화,  
+      AWS 인프라 환경 최적화 등 실무 운영 과정에서 발생하는 문제를 해결하며  
+      <b>백엔드 개발자로서의 실질적인 기술력과 문제 해결 능력</b>을 체계적으로 다질 수 있었습니다.
     </p>
   </section>
 
-  <!-- Footer -->
   <footer class="py-6 text-center mt-16">
     © 2025 Hwang Young Ho. All rights reserved.  
     <br><span class="text-gray-400 text-sm">Designed & Developed by 황영호</span>
