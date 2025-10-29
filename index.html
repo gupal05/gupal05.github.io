@@ -11,6 +11,9 @@
   <!-- Devicon (기술 로고 아이콘 세트) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/a2b4d6c7f3.js" crossorigin="anonymous"></script>
+
   <style>
     html { scroll-behavior: smooth; }
     body { background-color: #f9fafb; color: #1e293b; }
@@ -31,8 +34,9 @@
 
   <div class="min-h-screen flex flex-col md:flex-row">
 
-    <!-- 좌측 프로필 -->
-    <aside class="md:w-1/5 bg-white p-6 border-r border-gray-200 flex flex-col items-center shadow-sm">
+    <!-- 좌측 프로필 (Sticky Sidebar) -->
+    <aside class="md:w-1/5 bg-white p-6 border-r border-gray-200 flex flex-col items-center shadow-sm
+                  md:sticky md:top-1/2 md:translate-y-[-50%] md:h-fit">
       <img src="./assets/황영호.jpg" alt="황영호 프로필" class="w-24 h-24 rounded-full object-cover mb-4 shadow-md">
       <h1 class="text-xl font-bold mb-1">황영호</h1>
       <p class="text-gray-500 text-sm mb-4">Backend Developer</p>
@@ -114,21 +118,21 @@
           </div>
 
           <!-- Collaboration -->
-<div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
-  <h3 class="text-gray-700 font-semibold mb-4">Collaboration</h3>
-  <ul class="space-y-3 text-sm text-gray-700">
-    <li class="flex items-center space-x-3">
-      <i class="devicon-git-plain colored text-2xl"></i><span>Git / GitHub</span>
-    </li>
-    <li class="flex items-center space-x-3">
-      <i class="devicon-figma-plain colored text-2xl"></i><span>Figma / Jira</span>
-    </li>
-    <li class="flex items-center space-x-3">
-      <i class="fa-solid fa-vial text-gray-500 text-xl"></i><span>JMeter / Swagger</span>
-    </li>
-  </ul>
-</div>
-
+          <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+            <h3 class="text-gray-700 font-semibold mb-4">Collaboration</h3>
+            <ul class="space-y-3 text-sm text-gray-700">
+              <li class="flex items-center space-x-3">
+                <i class="devicon-git-plain colored text-2xl"></i><span>Git / GitHub</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="devicon-figma-plain colored text-2xl"></i><span>Figma / Jira</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fa-solid fa-vial text-gray-500 text-xl"></i><span>JMeter / Swagger</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <!-- Projects -->
@@ -176,7 +180,5 @@
     </main>
   </div>
 
-  <!-- FontAwesome (About 섹션용) -->
-  <script src="https://kit.fontawesome.com/a2b4d6c7f3.js" crossorigin="anonymous"></script>
 </body>
 </html>
