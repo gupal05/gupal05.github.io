@@ -1,40 +1,112 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>황영호 포트폴리오</title>
-  <style>
-    body { font-family: Pretendard, sans-serif; background: #f9f9f9; margin: 0; padding: 0; }
-    header { background: #111; color: white; padding: 2rem; text-align: center; }
-    section { max-width: 900px; margin: 3rem auto; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-    h1, h2 { color: #222; }
-    a { color: #0078ff; text-decoration: none; }
-    .project { margin-bottom: 2rem; }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <h1>황영호 포트폴리오</h1>
-    <p>백엔드 & 풀스택 개발자 | Spring Boot · AWS · Docker</p>
-  </header>
+<body class="bg-gray-50 text-gray-800 font-sans">
+<div class="min-h-screen flex flex-col md:flex-row">
+  <!-- 왼쪽 사이드바 -->
+  <aside class="md:w-1/3 bg-white shadow-md p-8 flex flex-col items-center">
+    <img src="./assets/황영호.jpg" alt="황영호 프로필" class="w-40 h-40 rounded-full object-cover shadow-lg mb-6" />
+    <h1 class="text-3xl font-bold text-gray-900 mb-2">황영호</h1>
+    <p class="text-blue-600 font-semibold mb-4">백엔드 & 풀스택 개발자</p>
+    <p class="text-center text-sm text-gray-600 leading-relaxed mb-6">
+      Spring Boot 기반 웹 서비스 개발 및 AWS 배포 경험 보유.
+      실무 중심의 API 설계, DB 모델링, CI/CD 자동화에 강점이 있습니다.
+    </p>
 
-  <section>
-    <h2>프로젝트 목록</h2>
-    <div class="project">
-      <h3><a href="./projects/hollybam.html">Hollybam</a></h3>
-      <p>Spring Boot 기반 실제 운영 중 쇼핑몰 | 성인인증 · 결제 · 배포 자동화</p>
+    <div class="space-y-2 text-sm text-gray-700">
+      <p><strong>📍 주소:</strong> 경기도 시흥시 신흥마을1길 33</p>
+      <p><strong>📧 이메일:</strong> <a href="mailto:dudgh2349@naver.com" class="text-blue-600">dudgh2349@naver.com</a></p>
+      <p><strong>🐙 GitHub:</strong> <a href="https://github.com/gupal05" target="_blank" class="text-blue-600">github.com/gupal05</a></p>
     </div>
+  </aside>
 
-    <div class="project">
-      <h3><a href="./projects/arcsona.html">Arcsona</a></h3>
-      <p>고급 오디오 쇼핑몰 | JPA, PostgreSQL, Redis</p>
-    </div>
+  <!-- 오른쪽 본문 -->
+  <main class="md:w-2/3 p-8 space-y-12">
+    <!-- About -->
+    <section>
+      <h2 class="text-2xl font-bold border-b-4 border-blue-500 inline-block mb-4">About Me</h2>
+      <p class="text-gray-700 leading-relaxed">
+        실무 중심의 백엔드 개발자로, 기획부터 배포까지 전 과정을 직접 수행했습니다.
+        Spring Boot, MyBatis, JPA를 중심으로 RESTful API를 설계하고
+        Docker, AWS, GitHub Actions를 활용한 자동화 배포 환경을 구축했습니다.
+        사용자 경험을 고려한 구조 설계와 데이터 무결성 유지에 자신 있습니다.
+      </p>
+    </section>
 
-    <div class="project">
-      <h3><a href="./projects/totalseller.html">Total Seller Backoffice</a></h3>
-      <p>고객 제안~계약~운영 관리 자동화 시스템 | JWT, Docker Compose, RDS</p>
-    </div>
-  </section>
+    <!-- Skills -->
+    <section>
+      <h2 class="text-2xl font-bold border-b-4 border-blue-500 inline-block mb-4">Skills</h2>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Java</span>
+        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Spring Boot</span>
+        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">MyBatis</span>
+        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">JPA</span>
+        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">MySQL / PostgreSQL</span>
+        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">AWS EC2 / RDS / S3</span>
+        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Docker / Docker Compose</span>
+        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Git / GitHub Actions</span>
+        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Thymeleaf</span>
+        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">RESTful API</span>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section>
+      <h2 class="text-2xl font-bold border-b-4 border-blue-500 inline-block mb-4">Projects</h2>
+
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-xl font-semibold text-blue-700">
+            <a href="./projects/hollybam.html">Hollybam</a>
+          </h3>
+          <p class="text-gray-600 text-sm mb-2">2025.06 ~ 2025.08 | 개인 프로젝트 (실제 운영 중)</p>
+          <p>성인 인증이 필요한 프리미엄 쇼핑몰 서비스
+            <br>Spring Boot · MyBatis · AWS EC2/RDS/S3 · Docker · GitHub Actions</p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold text-blue-700">
+            <a href="./projects/arcsona.html">Arcsona</a>
+          </h3>
+          <p class="text-gray-600 text-sm mb-2">2025.08 ~ 2025.09 | 팀 프로젝트 (백엔드 2, 프론트 2)</p>
+          <p>고급 오디오 전문 쇼핑몰
+            <br>Spring Boot · JPA · PostgreSQL · Flyway · Redis</p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold text-blue-700">
+            <a href="./projects/totalseller.html">TotalSeller Backoffice</a>
+          </h3>
+          <p class="text-gray-600 text-sm mb-2">2025.10 | 팀 프로젝트 (백엔드 2, 프론트 1)</p>
+          <p>고객 제안~계약~운영 프로세스 관리 백오피스
+            <br>Spring Boot · JWT 인증 · Docker Compose · AWS EC2/RDS/S3</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section>
+      <h2 class="text-2xl font-bold border-b-4 border-blue-500 inline-block mb-4">Experience</h2>
+
+      <div class="mb-6">
+        <h3 class="text-lg font-semibold">㈜혜안파트너스 | 개발팀</h3>
+        <p class="text-gray-600 text-sm mb-1">2024.05 ~ 재직 중</p>
+        <p class="text-gray-700">Spring Boot 기반 백엔드 및 서버 인프라 담당
+          <br>실제 운영 서비스(Hollybam, Arcsona, TotalSeller) 개발 및 유지보수</p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold">인천일보아카데미 | 경영지원팀</h3>
+        <p class="text-gray-600 text-sm mb-1">2023.08 ~ 2024.09</p>
+        <p class="text-gray-700">교육원 내 행정·운영 시스템 관리 및 내부 업무 프로세스 개선</p>
+      </div>
+    </section>
+  </main>
+</div>
 </body>
 </html>
