@@ -8,7 +8,7 @@
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Devicon (기술 로고 아이콘 세트) -->
+  <!-- Devicon (기술 로고) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
   <!-- FontAwesome -->
@@ -16,7 +16,7 @@
 
   <style>
     html { scroll-behavior: smooth; }
-    body { background-color: #f9fafb; color: #1e293b; }
+    body { background-color: #f9fafb; color: #1e293b; font-family: 'Pretendard', 'Inter', sans-serif; }
     .fade-in { animation: fadeIn 1.2s ease both; }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
@@ -30,13 +30,12 @@
   </style>
 </head>
 
-<body class="font-['Pretendard','Inter',sans-serif]">
+<body>
 
   <div class="min-h-screen flex flex-col md:flex-row">
 
-    <!-- 좌측 프로필 (Sticky Sidebar) -->
-    <aside class="md:w-1/5 bg-white p-6 border-r border-gray-200 flex flex-col items-center shadow-sm
-                  md:sticky md:top-1/2 md:translate-y-[-50%] md:h-fit">
+    <!-- 좌측 프로필 -->
+    <aside class="md:w-1/5 bg-white p-6 border-r border-gray-200 flex flex-col items-center shadow-sm">
       <img src="./assets/황영호.jpg" alt="황영호 프로필" class="w-24 h-24 rounded-full object-cover mb-4 shadow-md">
       <h1 class="text-xl font-bold mb-1">황영호</h1>
       <p class="text-gray-500 text-sm mb-4">Backend Developer</p>
@@ -53,37 +52,18 @@
       <!-- About -->
       <section class="fade-in">
         <h2 class="text-2xl font-semibold mb-6 border-b border-gray-300 inline-block pb-2">About Me</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-            <h3 class="font-semibold text-gray-700 mb-2"><i class="fa-solid fa-user-tie text-gray-500 mr-2"></i>나의 정체성</h3>
-            <p class="text-sm text-gray-700 leading-relaxed">
-              기획부터 배포까지 전 과정을 직접 경험한 백엔드 개발자입니다.  
-              코드 품질과 데이터 구조의 일관성을 중시하며,  
-              “유지보수성 높은 시스템”을 만드는 것에 열정이 있습니다.
-            </p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-            <h3 class="font-semibold text-gray-700 mb-2"><i class="fa-solid fa-lightbulb text-gray-500 mr-2"></i>개발 철학</h3>
-            <p class="text-sm text-gray-700 leading-relaxed">
-              “가독성과 구조는 속도보다 오래간다.”  
-              동작하는 코드보다 이해되는 코드를 중요시하며  
-              팀 전체의 생산성을 높이는 개발을 지향합니다.
-            </p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-            <h3 class="font-semibold text-gray-700 mb-2"><i class="fa-solid fa-handshake text-gray-500 mr-2"></i>협업 스타일</h3>
-            <p class="text-sm text-gray-700 leading-relaxed">
-              명확한 커뮤니케이션을 통해 프론트엔드, 기획자와의 협업 효율을 극대화합니다.  
-              기술적 제약을 명확히 전달하며, 해결 방안을 함께 설계합니다.
-            </p>
-          </div>
-        </div>
+        <p class="text-gray-700 leading-relaxed text-sm md:text-base">
+          기획부터 배포까지 전 과정을 직접 경험한 백엔드 개발자입니다.  
+          유지보수성과 구조적 완성도를 중요시하며,  
+          기술을 통해 비즈니스 가치를 높이는 데에 집중합니다.  
+          팀 내 협업에서는 명확한 의사소통과 코드의 일관성을 가장 중요하게 생각합니다.
+        </p>
       </section>
 
       <!-- Skills -->
       <section class="fade-in">
         <h2 class="text-2xl font-semibold mb-6 border-b border-gray-300 inline-block pb-2">Skills</h2>
-        
+
         <div class="grid md:grid-cols-3 gap-8">
           <!-- Backend -->
           <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
@@ -112,7 +92,7 @@
                 <i class="devicon-amazonwebservices-plain colored text-2xl"></i><span>AWS (EC2, RDS, S3)</span>
               </li>
               <li class="flex items-center space-x-3">
-                <i class="devicon-githubactions-plain colored text-2xl"></i><span>CI/CD with GitHub Actions</span>
+                <i class="devicon-githubactions-plain colored text-2xl"></i><span>CI/CD (GitHub Actions)</span>
               </li>
             </ul>
           </div>
@@ -139,10 +119,12 @@
       <section class="fade-in">
         <h2 class="text-2xl font-semibold mb-6 border-b border-gray-300 inline-block pb-2">Projects</h2>
         <div class="space-y-6">
+
+          <!-- Hollybam -->
           <div class="project-card bg-white p-6 rounded-lg border border-gray-100 transition">
-            <a href="./projects/hollybam.html" class="block">
+            <a href="./projects/hollybam.html" class="block hover:no-underline">
               <h3 class="text-lg font-semibold text-gray-800 mb-1">Hollybam</h3>
-              <p class="text-gray-500 text-sm mb-3">2025.06 ~ 2025.08 | 개인 프로젝트 (운영 중)</p>
+              <p class="text-gray-500 text-sm mb-3">2025.06 ~ 2025.08 | 개인 프로젝트</p>
               <p class="text-gray-700 text-sm leading-relaxed">
                 성인 인증 기반 쇼핑몰 플랫폼. 본인인증(NICE), 소셜 로그인(구글·네이버),  
                 실결제(레드커머스) 연동 및 Docker+CI/CD 자동배포 환경 구축.
@@ -150,8 +132,9 @@
             </a>
           </div>
 
+          <!-- Arcsona -->
           <div class="project-card bg-white p-6 rounded-lg border border-gray-100 transition">
-            <a href="./projects/arcsona.html" class="block">
+            <a href="./projects/arcsona.html" class="block hover:no-underline">
               <h3 class="text-lg font-semibold text-gray-800 mb-1">Arcsona</h3>
               <p class="text-gray-500 text-sm mb-3">2025.08 ~ 2025.09 | 팀 프로젝트</p>
               <p class="text-gray-700 text-sm leading-relaxed">
@@ -161,8 +144,9 @@
             </a>
           </div>
 
+          <!-- TotalSeller -->
           <div class="project-card bg-white p-6 rounded-lg border border-gray-100 transition">
-            <a href="./projects/totalseller.html" class="block">
+            <a href="./projects/totalseller.html" class="block hover:no-underline">
               <h3 class="text-lg font-semibold text-gray-800 mb-1">TotalSeller Backoffice</h3>
               <p class="text-gray-500 text-sm mb-3">2025.10 | 팀 프로젝트</p>
               <p class="text-gray-700 text-sm leading-relaxed">
@@ -171,6 +155,7 @@
               </p>
             </a>
           </div>
+
         </div>
       </section>
 
