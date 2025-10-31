@@ -30,28 +30,17 @@
 
     <hr class="divider"/>
 
-    <h3>시스템 아키텍처</h3>
-    <div class="image-block">
-      <img src="assets/arcsona/server_architecture.png" alt="Arcsona Server Architecture" class="zoomable"/>
-      <p class="caption">Arcsona 서버 아키텍처 구성도</p>
-    </div>
-
-    <hr class="divider"/>
-
     <h3>데이터베이스 설계 (ERD)</h3>
     <div class="image-block">
-      <img src="assets/arcsona/arcsona_erd.png" alt="Arcsona ERD" class="zoomable"/>
-      <p class="caption">
-        PostgreSQL 기반 ERD (30개 이상 테이블 구성)<br>
-        ⚙️ 실무에서는 전체 테이블이 더 많지만, 주요 도메인 중심으로 요약 정리.
-      </p>
+      <img src="https://gupal05.github.io/assets/arcsona/arcsona_erd.png" alt="Arcsona ERD" class="zoomable"/>
+      <p class="caption">PostgreSQL 기반 ERD (30개 이상 테이블 구성)</p>
     </div>
 
     <hr class="divider"/>
 
     <h3>인증 및 API 테스트</h3>
     <div class="image-block">
-      <img src="assets/arcsona/postman_login.png" alt="Postman JWT Authentication" class="zoomable"/>
+      <img src="https://gupal05.github.io/assets/arcsona/postman_login.png" alt="Postman JWT Authentication" class="zoomable"/>
       <p class="caption">Postman을 이용한 JWT 토큰 발급 테스트 (/login)</p>
     </div>
 
@@ -63,93 +52,38 @@
 
     <h4>🧑‍💼 Admin APIs</h4>
     <div class="image-grid">
-      <img src="assets/arcsona/swagger_admin1.png" alt="Admin Swagger 1" class="zoomable"/>
-      <img src="assets/arcsona/swagger_admin2.png" alt="Admin Swagger 2" class="zoomable"/>
-      <img src="assets/arcsona/swagger_admin3.png" alt="Admin Swagger 3" class="zoomable"/>
+      <img src="https://gupal05.github.io/assets/arcsona/swagger_admin1.png" class="zoomable"/>
+      <img src="https://gupal05.github.io/assets/arcsona/swagger_admin2.png" class="zoomable"/>
+      <img src="https://gupal05.github.io/assets/arcsona/swagger_admin3.png" class="zoomable"/>
     </div>
 
     <h4>👥 Member APIs</h4>
     <div class="image-grid">
-      <img src="assets/arcsona/swagger_member1.png" alt="Member Swagger 1" class="zoomable"/>
-      <img src="assets/arcsona/swagger_member2.png" alt="Member Swagger 2" class="zoomable"/>
-      <img src="assets/arcsona/swagger_member3.png" alt="Member Swagger 3" class="zoomable"/>
-      <img src="assets/arcsona/swagger_member4.png" alt="Member Swagger 4" class="zoomable"/>
+      <img src="https://gupal05.github.io/assets/arcsona/swagger_member1.png" class="zoomable"/>
+      <img src="https://gupal05.github.io/assets/arcsona/swagger_member2.png" class="zoomable"/>
+      <img src="https://gupal05.github.io/assets/arcsona/swagger_member3.png" class="zoomable"/>
+      <img src="https://gupal05.github.io/assets/arcsona/swagger_member4.png" class="zoomable"/>
     </div>
 
     <h4>🌐 Public APIs</h4>
     <div class="image-grid">
-      <img src="assets/arcsona/swagger_public1.png" alt="Public Swagger 1" class="zoomable"/>
-      <img src="assets/arcsona/swagger_public2.png" alt="Public Swagger 2" class="zoomable"/>
+      <img src="https://gupal05.github.io/assets/arcsona/swagger_public1.png" class="zoomable"/>
+      <img src="https://gupal05.github.io/assets/arcsona/swagger_public2.png" class="zoomable"/>
     </div>
-
-    <hr class="divider"/>
-
-    <h3>핵심 역할 및 기술 구현</h3>
-    <ul class="role-list">
-      <li>JWT 기반 사용자 인증 및 권한별 접근 제어 설계</li>
-      <li>Flyway를 활용한 다중 환경 간 DB 스키마 버전 동기화</li>
-      <li>Docker Compose로 백엔드·DB·Redis 컨테이너 통합 실행</li>
-      <li>Swagger + Postman으로 팀 내 API 테스트 환경 통일</li>
-      <li>Redis 기반 토큰 캐시 및 성능 개선 (응답 속도 평균 32% 향상)</li>
-    </ul>
-
-    <hr class="divider"/>
-
-    <h3>기술 스택</h3>
-    <div class="tech-stack">
-      <span>Java 17</span>
-      <span>Spring Boot 3.3</span>
-      <span>JPA / Hibernate</span>
-      <span>PostgreSQL</span>
-      <span>Redis</span>
-      <span>Flyway</span>
-      <span>Docker / Docker Compose</span>
-      <span>Swagger 3.0</span>
-      <span>Spring Security</span>
-      <span>JWT</span>
-      <span>Postman</span>
-      <span>Next.js (Frontend)</span>
-    </div>
-  </div>
-
-  <!-- Image Zoom Modal -->
-  <div id="imageModal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modalImage">
   </div>
 
   <style>
     .project-section { padding: 60px 0; font-family: 'Pretendard', sans-serif; color: #222; }
     .project-title { font-size: 2em; font-weight: 700; margin-bottom: 5px; }
     .project-subtitle { font-size: 1em; color: #666; margin-bottom: 30px; }
-    .project-meta p { font-size: 0.95em; color: #555; margin: 2px 0; }
-    .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
-    .image-block img { width: 100%; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s ease; }
-    .image-block img:hover { transform: scale(1.01); }
-    .caption { text-align: center; font-size: 0.9em; color: #777; margin-top: 5px; }
     .image-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin: 20px 0; }
-    .image-grid img { width: 100%; border-radius: 8px; cursor: pointer; transition: transform 0.3s ease; }
+    .image-grid img { width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease; cursor: pointer; }
     .image-grid img:hover { transform: scale(1.02); }
-    .project-highlights li, .role-list li { margin-bottom: 8px; }
-    .tech-stack span { display: inline-block; background: #f6f6f6; border-radius: 6px; padding: 6px 12px; margin: 4px; font-size: 0.9em; }
-
-    /* Modal Styles */
-    .modal { display: none; position: fixed; z-index: 1000; padding-top: 60px; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); }
-    .modal-content { margin: auto; display: block; max-width: 90%; max-height: 80%; border-radius: 10px; }
-    .close { position: absolute; top: 20px; right: 40px; color: #fff; font-size: 35px; font-weight: bold; cursor: pointer; }
   </style>
 
   <script>
-    const modal = document.getElementById("imageModal");
-    const modalImg = document.getElementById("modalImage");
-    const closeBtn = document.getElementsByClassName("close")[0];
-    document.querySelectorAll(".zoomable").forEach(img => {
-      img.addEventListener("click", () => {
-        modal.style.display = "block";
-        modalImg.src = img.src;
-      });
+    document.querySelectorAll('.zoomable').forEach(img => {
+      img.addEventListener('click', () => window.open(img.src, '_blank'));
     });
-    closeBtn.onclick = () => modal.style.display = "none";
-    modal.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
   </script>
 </section>
