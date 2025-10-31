@@ -1,10 +1,206 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arcsona | 프로젝트 포트폴리오</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f8fafc;
+        font-family: "Pretendard", sans-serif;
+        color: #1e293b;
+      }
+      .section-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #2563eb;
+      }
+      .gallery img {
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+      .gallery img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 50;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+      }
+      .modal img {
+        max-width: 90%;
+        max-height: 90%;
+        margin: 5% auto;
+        display: block;
+      }
+      .close {
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
 
-</body>
+  <body>
+    <main class="max-w-6xl mx-auto px-6 py-16">
+      <!-- 프로젝트 제목 -->
+      <section class="text-center mb-16">
+        <h1 class="text-4xl font-bold mb-3 text-gray-800">Arcsona</h1>
+        <p class="text-gray-600 text-lg">
+          고급 오디오 기기 전문 쇼핑몰 백엔드 프로젝트
+        </p>
+        <a
+          href="https://github.com/gupal05/arcsona"
+          target="_blank"
+          class="inline-block mt-4 text-blue-600 font-medium hover:underline"
+          >GitHub 저장소 보기 →</a
+        >
+      </section>
+
+      <!-- 프로젝트 정보 -->
+      <section class="text-center mb-12">
+        <div class="inline-block bg-blue-50 px-6 py-3 rounded-lg shadow-sm">
+          <p>👥 프로젝트 인원: <strong>총 4명 (백엔드 2명 / 프론트엔드 2명)</strong></p>
+          <p>📅 개발 기간: <strong>2025년 8월 ~ 2025년 10월 (약 3개월)</strong></p>
+        </div>
+      </section>
+
+      <!-- 프로젝트 개요 -->
+      <section class="mb-16">
+        <h2 class="section-title">💡 프로젝트 개요</h2>
+        <p class="text-gray-700 leading-relaxed">
+          <b>Arcsona</b>는 고급 오디오 기기를 판매하는 이커머스 플랫폼으로, 
+          실무 환경에서의 협업을 염두에 두고 백엔드 아키텍처를 직접 설계 및 구현한 프로젝트입니다.<br /><br />
+          해당 프로젝트는 <b>단일 모놀리식 구조</b>로 구축되었으며, 
+          인증·인가 처리, DB 마이그레이션 자동화, 캐시 처리, API 문서화 등 
+          실제 운영 환경에서 요구되는 핵심 기능을 직접 구현했습니다.<br /><br />
+          백엔드 파트에서는 <b>Spring Security 기반의 JWT 인증 시스템</b>, 
+          <b>Redis 캐싱 구조 설계</b>, <b>Flyway DB 버전 관리</b>, 
+          <b>Docker Compose 통합 환경</b> 등을 주도적으로 담당했습니다.
+        </p>
+      </section>
+
+      <!-- 기술 스택 -->
+      <section class="mb-16">
+        <h2 class="section-title">⚙️ 기술 스택</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
+          <div>Spring Boot</div>
+          <div>PostgreSQL</div>
+          <div>Redis</div>
+          <div>JPA</div>
+          <div>Flyway</div>
+          <div>Docker Compose</div>
+          <div>Spring Security</div>
+          <div>JWT</div>
+          <div>AWS EC2 / RDS / S3 (예정)</div>
+          <div>GitHub Actions (예정)</div>
+          <div>Nginx (예정)</div>
+          <div>Swagger / Postman</div>
+        </div>
+      </section>
+
+      <!-- 주요 구현 기능 -->
+      <section class="mb-16">
+        <h2 class="section-title">🧩 주요 구현 기능</h2>
+        <ul class="list-disc list-inside text-gray-700 leading-relaxed">
+          <li><b>JWT + Spring Security</b> 기반 인증 및 인가 처리</li>
+          <li><b>Redis</b>를 활용한 세션 및 캐시 관리</li>
+          <li><b>Flyway</b>를 통한 DB 마이그레이션 자동화</li>
+          <li><b>Swagger</b>로 API 명세 및 테스트 환경 구축</li>
+          <li><b>Postman</b>을 통한 JWT 토큰 발급 및 인증 테스트</li>
+          <li><b>Docker Compose</b>로 로컬 통합 개발 환경 구성</li>
+          <li><b>협업형 브랜치 전략</b> (feature/develop/main 구조 적용)</li>
+        </ul>
+      </section>
+
+      <!-- API 테스트 -->
+      <section class="mb-16">
+        <h2 class="section-title">🧾 API 테스트 및 문서화</h2>
+        <p class="text-gray-700 mb-6">
+          Arcsona의 모든 API는 JWT 기반 인증 구조를 따르며, 
+          <b>Postman</b>에서 로그인 후 토큰을 발급받아 <b>Swagger Authorization</b>에 적용하여 테스트했습니다.
+        </p>
+        <div class="gallery grid grid-cols-2 md:grid-cols-3 gap-4">
+          <img src="assets/arcsona/postman_login.png" alt="Postman 로그인 테스트 (JWT 발급)" />
+          <img src="assets/arcsona/swagger_product1.png" alt="Swagger 상품 API 요청" />
+          <img src="assets/arcsona/swagger_product2.png" alt="Swagger 응답 결과" />
+          <img src="assets/arcsona/swagger_member.png" alt="회원 관련 API 구조" />
+          <img src="assets/arcsona/swagger_board.png" alt="문의사항/위시리스트 API 구조" />
+          <img src="assets/arcsona/swagger_cart.png" alt="장바구니 API 구조" />
+        </div>
+      </section>
+
+      <!-- ERD -->
+      <section class="mb-16">
+        <h2 class="section-title">🗂️ 데이터베이스 ERD</h2>
+        <p class="text-gray-700 mb-4">
+          프로젝트에서 사용된 ERD는 핵심 12개 테이블 중심으로 구성되어 있으며, 
+          <b>UUID 기반 PK</b>를 통해 식별성을 유지합니다.<br />
+          실제 운영 환경에서는 주문, 결제, 쿠폰, 로그 테이블 등을 포함한 <b>총 30개 이상의 테이블</b>이 존재합니다.
+        </p>
+        <div class="gallery grid grid-cols-1 md:grid-cols-2">
+          <img src="assets/arcsona/arcsona_erd.png" alt="Arcsona ERD 구조도" />
+        </div>
+      </section>
+
+      <!-- 회고 -->
+      <section class="mb-16">
+        <h2 class="section-title">📘 프로젝트 회고</h2>
+        <p class="text-gray-700 leading-relaxed">
+          <b>Arcsona</b>는 단순한 기능 구현을 넘어, <b>실무 협업형 백엔드 개발 프로세스</b>를 경험하기 위한 프로젝트였습니다.<br /><br />
+          • JWT 인증 로직과 Spring Security 필터 체인 커스터마이징<br />
+          • Redis 캐시 구조 최적화 및 TTL 정책 설계<br />
+          • Flyway 스크립트 기반 DB 관리 자동화<br />
+          • Swagger / Postman으로 API 테스트 자동화<br />
+          • Docker Compose로 로컬·팀원 간 환경 통일<br /><br />
+          이를 통해 <b>실제 기업 환경에서 발생할 수 있는 인프라 및 데이터 관리 이슈</b>를 경험적으로 해결할 수 있었고,  
+          팀 단위 협업 속에서도 <b>주도적으로 백엔드 아키텍처를 설계·운영</b>하는 역량을 키웠습니다.
+        </p>
+      </section>
+    </main>
+
+    <!-- 이미지 모달 -->
+    <div id="imageModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img id="modalImage" src="" alt="확대 이미지" />
+    </div>
+
+    <script>
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+      const imgs = document.querySelectorAll(".gallery img");
+
+      imgs.forEach((img) => {
+        img.addEventListener("click", () => {
+          modal.style.display = "block";
+          modalImg.src = img.src;
+        });
+      });
+
+      function closeModal() {
+        modal.style.display = "none";
+      }
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+  </body>
 </html>
