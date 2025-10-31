@@ -20,8 +20,7 @@
     .img-card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
     .img-card img { width: 100%; height: 260px; object-fit: cover; transition: transform 0.4s ease; }
     .img-card:hover img { transform: scale(1.05); }
-    .img-caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.55); color: white; padding: 10px 14px; font-size: 0.9rem; opacity: 0; transition: opacity 0.3s ease; }
-    .img-card:hover .img-caption { opacity: 1; }
+    .img-caption-fixed { background: #f9fafb; text-align: center; font-size: 0.9rem; padding: 10px; color: #374151; border-top: 1px solid #e5e7eb; }
 
     .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); justify-content: center; align-items: center; }
     .modal img { max-width: 90%; max-height: 85%; border-radius: 10px; box-shadow: 0 0 25px rgba(255,255,255,0.2); }
@@ -107,7 +106,7 @@
     </div>
   </section>
 
-  <!-- 아키텍처 다이어그램 -->
+  <!-- 시스템 아키텍처 -->
   <section class="bg-gray-50">
     <div class="container mx-auto px-6 text-center">
       <h2 class="section-title text-left">🧩 시스템 아키텍처</h2>
@@ -131,15 +130,15 @@
     <div class="container mx-auto px-6">
       <h2 class="section-title">📸 화면 미리보기</h2>
       <div class="gallery">
-        <div class="img-card"><img src="/assets/hollybam/intro.png" alt="인트로 페이지"><div class="img-caption">인트로 페이지 — 브랜드 소개 및 성인인증 진입</div></div>
-        <div class="img-card"><img src="/assets/hollybam/auth1.png" alt="본인인증 1"><div class="img-caption">본인인증 — 정보 입력 화면</div></div>
-        <div class="img-card"><img src="/assets/hollybam/auth2.png" alt="본인인증 2"><div class="img-caption">본인인증 완료 화면</div></div>
-        <div class="img-card"><img src="/assets/hollybam/main.png" alt="메인 화면"><div class="img-caption">메인 페이지 — 상품 목록 및 배너</div></div>
-        <div class="img-card"><img src="/assets/hollybam/order1.png" alt="주문서 1"><div class="img-caption">주문서 작성 — 배송지 입력</div></div>
-        <div class="img-card"><img src="/assets/hollybam/order2.png" alt="주문서 2"><div class="img-caption">주문서 작성 — 결제 수단 선택</div></div>
-        <div class="img-card"><img src="/assets/hollybam/payment1.png" alt="결제 1"><div class="img-caption">결제창 — 카드 결제 선택 화면</div></div>
-        <div class="img-card"><img src="/assets/hollybam/payment2.png" alt="결제 2"><div class="img-caption">결제 진행 화면</div></div>
-        <div class="img-card"><img src="/assets/hollybam/admin.png" alt="관리자 대시보드"><div class="img-caption">관리자 대시보드 — 주문 및 회원 관리</div></div>
+        <div class="img-card"><img src="/assets/hollybam/intro.png" alt="인트로 페이지"><div class="img-caption-fixed">인트로 페이지 — 브랜드 소개 및 성인인증 진입</div></div>
+        <div class="img-card"><img src="/assets/hollybam/auth1.png" alt="본인인증 1"><div class="img-caption-fixed">본인인증 — 정보 입력 화면</div></div>
+        <div class="img-card"><img src="/assets/hollybam/auth2.png" alt="본인인증 2"><div class="img-caption-fixed">본인인증 완료 화면</div></div>
+        <div class="img-card"><img src="/assets/hollybam/main.png" alt="메인 화면"><div class="img-caption-fixed">메인 페이지 — 상품 목록 및 배너</div></div>
+        <div class="img-card"><img src="/assets/hollybam/order1.png" alt="주문서 1"><div class="img-caption-fixed">주문서 작성 — 배송지 입력</div></div>
+        <div class="img-card"><img src="/assets/hollybam/order2.png" alt="주문서 2"><div class="img-caption-fixed">주문서 작성 — 결제 수단 선택</div></div>
+        <div class="img-card"><img src="/assets/hollybam/payment1.png" alt="결제 1"><div class="img-caption-fixed">결제창 — 카드 결제 선택 화면</div></div>
+        <div class="img-card"><img src="/assets/hollybam/payment2.png" alt="결제 2"><div class="img-caption-fixed">결제 진행 화면</div></div>
+        <div class="img-card"><img src="/assets/hollybam/admin.png" alt="관리자 대시보드"><div class="img-caption-fixed">관리자 대시보드 — 주문 및 회원 관리</div></div>
       </div>
     </div>
   </section>
