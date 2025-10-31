@@ -75,26 +75,41 @@
 
   <!-- 시스템 아키텍처 -->
   <section class="bg-gray-50">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="section-title text-left">🧩 시스템 아키텍처</h2>
-      <div class="diagram mx-auto mt-10">
-        <div class="diagram-box">Client (Next.js)</div>
-        <div class="arrow">⬇</div>
-        <div class="diagram-box">Nginx (API Gateway)</div>
-        <div class="arrow">⬇</div>
-        <div class="diagram-box">Spring Boot Backend</div>
-        <div class="arrow">⬇</div>
-        <div class="diagram-box">PostgreSQL (RDS)</div>
-        <div class="arrow">➡</div>
-        <div class="diagram-box">Redis (Cache)</div>
-        <div class="arrow">⬇</div>
-        <div class="diagram-box">Flyway (DB Version Control)</div>
-      </div>
-      <p class="text-gray-500 text-sm mt-5">
-        Docker Compose 기반 로컬 통합 실행 · CI/CD 자동화 · AWS 배포 준비 중
-      </p>
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="section-title text-left">🧩 시스템 아키텍처</h2>
+    <div class="diagram mx-auto mt-10">
+
+      <!-- Frontend -->
+      <div class="diagram-box">Client (Next.js)</div>
+      <div class="arrow">⬇</div>
+
+      <!-- Gateway -->
+      <div class="diagram-box">Nginx (API Gateway)</div>
+      <div class="arrow">⬇</div>
+
+      <!-- Backend -->
+      <div class="diagram-box">Spring Boot Backend</div>
+      <div class="arrow">⬇</div>
+
+      <!-- DB Initialization -->
+      <div class="diagram-box">Flyway (DB Migration / Schema Sync)</div>
+      <div class="arrow">⬇</div>
+
+      <!-- Database -->
+      <div class="diagram-box">PostgreSQL (RDS)</div>
+      <div class="arrow">➡</div>
+
+      <!-- Cache -->
+      <div class="diagram-box">Redis (Cache Layer)</div>
     </div>
-  </section>
+
+    <p class="text-gray-500 text-sm mt-5">
+      Flyway는 애플리케이션 실행 시 DB 스키마를 자동 마이그레이션하여  
+      모든 개발자의 로컬 및 서버 환경에서 동일한 구조를 유지합니다.<br>
+      Docker Compose 기반 통합 실행 · CI/CD 자동화 · AWS 배포 준비 중
+    </p>
+  </div>
+</section>
 
   <!-- 데이터베이스 구조 (Hollybam 동일형식) -->
   <section class="bg-white mt-20">
