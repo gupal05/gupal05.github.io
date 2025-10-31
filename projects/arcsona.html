@@ -22,12 +22,16 @@
     .img-card:hover img { transform: scale(1.05); }
     .img-caption-fixed { background: #f9fafb; text-align: center; font-size: 0.9rem; padding: 10px; color: #374151; border-top: 1px solid #e5e7eb; }
 
+    .diagram { position: relative; background: white; border-radius: 16px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.07); text-align: center; }
+    .diagram-box { display: inline-block; background: #eff6ff; color: #1e3a8a; font-weight: 600; border-radius: 12px; padding: 12px 20px; margin: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+    .arrow { font-size: 1.5rem; color: #6b7280; margin: 0 8px; }
+
+    footer { background: #111827; color: #9ca3af; font-size: 0.9rem; }
+
     .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); justify-content: center; align-items: center; }
     .modal img { max-width: 90%; max-height: 85%; border-radius: 10px; box-shadow: 0 0 25px rgba(255,255,255,0.2); }
     .modal.active { display: flex; animation: fadeIn 0.4s ease; }
     @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
-
-    footer { background: #111827; color: #9ca3af; font-size: 0.9rem; }
   </style>
 </head>
 
@@ -69,21 +73,52 @@
     </p>
   </section>
 
-  <!-- ERD -->
+  <!-- 시스템 아키텍처 -->
   <section class="bg-gray-50">
-    <div class="container mx-auto px-6">
-      <h2 class="section-title">🗄 데이터베이스 구조 (ERD)</h2>
-      <div class="gallery">
-        <div class="img-card">
-          <img src="https://gupal05.github.io/assets/arcsona/arcsona_erd.png" alt="ERD">
-          <div class="img-caption-fixed">ERD — PostgreSQL 기반 DB 구조 (30개 이상 테이블)</div>
-        </div>
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="section-title text-left">🧩 시스템 아키텍처</h2>
+      <div class="diagram mx-auto mt-10">
+        <div class="diagram-box">Client (Next.js)</div>
+        <div class="arrow">⬇</div>
+        <div class="diagram-box">Nginx (API Gateway)</div>
+        <div class="arrow">⬇</div>
+        <div class="diagram-box">Spring Boot Backend</div>
+        <div class="arrow">⬇</div>
+        <div class="diagram-box">PostgreSQL (RDS)</div>
+        <div class="arrow">➡</div>
+        <div class="diagram-box">Redis (Cache)</div>
+        <div class="arrow">⬇</div>
+        <div class="diagram-box">Flyway (DB Version Control)</div>
       </div>
+      <p class="text-gray-500 text-sm mt-5">
+        Docker Compose 기반 로컬 통합 실행 · CI/CD 자동화 · AWS 배포 준비 중
+      </p>
+    </div>
+  </section>
+
+  <!-- 데이터베이스 구조 (Hollybam 동일형식) -->
+  <section class="bg-white mt-20">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title">🗄 데이터베이스 구조</h2>
+      <p class="text-gray-700 mb-8 leading-relaxed">
+        <b>Arcsona</b> 서비스는 회원, 상품, 주문, 리뷰 등 다양한 도메인으로 구성되어 있으며,  
+        실제 운영 단계에서는 <b>30개 이상의 테이블</b>이 존재합니다.<br>
+        아래 ERD는 핵심 도메인 중심으로 정리된 구조로,  
+        <b>민감 정보와 내부용 보조 테이블을 제외한 주요 테이블만 발췌</b>하였습니다.
+      </p>
+
+      <div class="max-w-5xl mx-auto rounded-2xl shadow-lg overflow-hidden">
+        <img src="https://gupal05.github.io/assets/arcsona/arcsona_erd.png" alt="Arcsona ERD" class="w-full h-auto">
+      </div>
+
+      <p class="text-center text-gray-500 text-sm mt-4">
+        ※ ERD는 운영 환경에서 사용 중인 전체 구조 중 일부를 시각화한 버전입니다.
+      </p>
     </div>
   </section>
 
   <!-- API 테스트 및 Swagger -->
-  <section class="container mx-auto px-6 mt-16">
+  <section class="container mx-auto px-6 mt-20">
     <h2 class="section-title">📡 API 테스트 및 문서</h2>
     <p class="text-gray-700 mb-8">
       JWT 인증과 권한별 API를 Postman과 Swagger를 통해 검증하고 문서화했습니다.
@@ -92,9 +127,9 @@
     <div class="gallery">
       <div class="img-card"><img src="https://gupal05.github.io/assets/arcsona/postman_login.png" alt="Postman Login"><div class="img-caption-fixed">Postman — JWT 로그인 테스트</div></div>
 
-      <div class="img-card"><img src="https://gupal05.github.io/assets/arcsona/swagger_admin1.png" alt="Admin API 1"><div class="img-caption-fixed">Swagger(Admin) — 관리자 API 목록 (1)</div></div>
-      <div class="img-card"><img src="https://gupal05.github.io/assets/arcsona/swagger_admin2.png" alt="Admin API 2"><div class="img-caption-fixed">Swagger(Admin) — 관리자 API 목록 (2)</div></div>
-      <div class="img-card"><img src="https://gupal05.github.io/assets/arcsona/swagger_admin3.png" alt="Admin API 3"><div class="img-caption-fixed">Swagger(Admin) — 관리자 API 목록 (3)</div></div>
+      <div class="img-card"><img src="https://gupal05.github.io/assets/arcsona/swagger_admin1.png" alt="Admin API 1"><div class="img-caption-fixed">Swagger(Admin) — 관리자 API (1)</div></div>
+      <div class="img-card"><img src="https://gupal05.github.io/assets/arcsona/swagger_admin2.png" alt="Admin API 2"><div class="img-caption-fixed">Swagger(Admin) — 관리자 API (2)</div></div>
+      <div class="img-card"><img src="https://gupal05.github.io/assets/arcsona/swagger_admin3.png" alt="Admin API 3"><div class="img-caption-fixed">Swagger(Admin) — 관리자 API (3)</div></div>
 
       <div class="img-card"><img src="https://gupal05.github.io/assets/arcsona/swagger_member1.png" alt="Member API 1"><div class="img-caption-fixed">Swagger(Member) — 회원 API (1)</div></div>
       <div class="img-card"><img src="https://gupal05.github.io/assets/arcsona/swagger_member2.png" alt="Member API 2"><div class="img-caption-fixed">Swagger(Member) — 회원 API (2)</div></div>
@@ -123,7 +158,6 @@
     <br><span class="text-gray-400 text-sm">Designed & Developed by 황영호</span>
   </footer>
 
-  <!-- Modal -->
   <div id="imageModal" class="modal" onclick="this.classList.remove('active')">
     <img id="modalImage" src="" alt="확대 이미지">
   </div>
