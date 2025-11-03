@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TotalSeller Backoffice 프로젝트 포트폴리오 | 황영호</title>
+  <title>Arcsona 프로젝트 포트폴리오 | 황영호</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
@@ -28,25 +28,8 @@
 
     footer { background: #111827; color: #9ca3af; font-size: 0.9rem; }
 
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.85);
-      justify-content: center;
-      align-items: center;
-      cursor: zoom-out;
-    }
-    .modal img {
-      max-width: 90%;
-      max-height: 85%;
-      border-radius: 10px;
-      box-shadow: 0 0 25px rgba(255,255,255,0.2);
-    }
+    .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); justify-content: center; align-items: center; cursor: zoom-out; }
+    .modal img { max-width: 90%; max-height: 85%; border-radius: 10px; box-shadow: 0 0 25px rgba(255,255,255,0.2); }
     .modal.active { display: flex; animation: fadeIn 0.3s ease; }
     @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
   </style>
@@ -56,18 +39,17 @@
   <!-- Hero Section -->
   <section class="gradient-bg py-20 text-center">
     <div class="container mx-auto px-6">
-      <h1 class="text-5xl font-extrabold mb-4">TotalSeller Backoffice 프로젝트</h1>
-      <p class="text-lg opacity-90 mb-6">내부 계약·팀 관리 시스템 | Spring Boot · PostgreSQL · Flyway · Docker · MSA</p>
-      <a href="https://bo.totalseller.co.kr/" target="_blank" class="btn-primary">🔗 서비스 접속 (로그인 필요)</a>
+      <h1 class="text-5xl font-extrabold mb-4">Arcsona 프로젝트</h1>
+      <p class="text-lg opacity-90 mb-6">고급 이어폰·헤드셋 전문 쇼핑몰 | Spring Boot · PostgreSQL · Redis · Docker</p>
+      <a class="btn-primary opacity-80 cursor-not-allowed">🚧 사업자등록 문제로 AWS 배포 대기 중</a>
 
       <div class="mt-8">
         <span class="tag">Spring Boot</span>
         <span class="tag">JPA</span>
         <span class="tag">PostgreSQL</span>
         <span class="tag">Flyway</span>
+        <span class="tag">Redis</span>
         <span class="tag">Docker</span>
-        <span class="tag">Scheduler</span>
-        <span class="tag">MSA</span>
         <span class="tag">Swagger</span>
       </div>
     </div>
@@ -78,80 +60,92 @@
     <h2 class="section-title">프로젝트 개요</h2>
 
     <div class="text-gray-700 mb-6 space-y-2">
-      <p><strong>👥 프로젝트 인원:</strong> 백엔드 2명 · 프론트엔드 1명</p>
-      <p><strong>📅 개발 기간:</strong> 2025년 10월 13일 ~ 2025년 10월 30일 (리팩토링 진행 중)</p>
-      <p><strong>🧑‍💻 담당 역할:</strong> 백엔드 설계, DB 모델링, Flyway 마이그레이션, 스케줄러 동기화 로직 구현, Swagger 문서 자동화, Docker 환경 배포</p>
+      <p><strong>👥 프로젝트 인원:</strong> 총 4명 (프론트엔드 2명 · 백엔드 2명)</p>
+      <p><strong>📅 개발 기간:</strong> 2025년 9월 ~ 진행 중</p>
+      <p><strong>🧑‍💻 담당 역할:</strong> 백엔드 개발 (도메인 설계, CRUD API 구현, Flyway 설정, Redis 캐시, Swagger 문서화)</p>
     </div>
 
     <p class="text-gray-700 mb-6">
-      <b>TotalSeller Backoffice</b>는 내부 직원들이 클라이언트 계약과 오퍼링을 효율적으로 관리하기 위해 제작된 <b>독립형 백오피스 시스템</b>입니다.<br><br>
-      프론트오피스는 별도의 개발팀이 담당하고 있으며, 백오피스는 완전히 분리된 <b>MSA(Microservice Architecture)</b> 구조로 구축되었습니다.<br><br>
-      두 시스템은 실시간으로 연결되지 않고, 현재는 <b>스케줄러(Scheduler)</b> 기반으로 데이터를 동기화하고 있으며  
-      향후에는 <b>Webhook 기반 이벤트 동기화</b>로 개선할 예정입니다.
+      <b>Arcsona</b>는 프리미엄 이어폰·헤드셋을 판매하는 온라인 쇼핑몰로,  
+      사용자의 주문 흐름과 상품 관리 기능을 안정적으로 처리하기 위한 <b>도메인 기반 구조</b>로 설계되었습니다.<br><br>
+      모든 데이터는 PostgreSQL 기반으로 정규화되어 있으며,  
+      <b>JPA 연관관계 매핑</b>을 통해 상품-옵션-이미지 구조를 유연하게 관리하도록 구현했습니다.
     </p>
   </section>
 
-  <!-- 프로젝트 프로세스 -->
-  <section class="bg-gray-50">
-    <div class="container mx-auto px-6">
-      <h2 class="section-title">📈 프로젝트 프로세스</h2>
-      <ol class="list-decimal list-inside space-y-3 text-gray-700 leading-relaxed">
-        <li><b>Admin</b>이 각 팀을 생성하고 팀장 계정을 등록합니다.</li>
-        <li>직원은 회원가입을 통해 팀 가입을 신청합니다.</li>
-        <li>팀장은 요청을 승인 또는 반려할 수 있습니다.</li>
-        <li>승인된 직원은 제안서를 작성해 클라이언트에게 전달합니다.</li>
-        <li>클라이언트가 계약을 수락하면 직원은 <b>오퍼링(Offering)</b>을 생성합니다.</li>
-        <li>오퍼링에는 제안서, 계약서, 담당자, 카테고리 정보가 포함됩니다.</li>
-        <li>선택된 카테고리에 따라 <b>프로세스 템플릿</b> 데이터를 기반으로 프로세스가 자동 생성됩니다.</li>
-        <li>관리자는 팀별 진행률, 담당자 현황, 계약 상태를 한눈에 파악할 수 있습니다.</li>
-      </ol>
+  <!-- 기술 설계 및 구현 -->
+  <section class="container mx-auto px-6">
+    <h2 class="section-title">⚙️ 기술 설계 및 구현</h2>
+    <div class="space-y-6 text-gray-700 leading-relaxed">
+      <div>
+        <h3 class="font-semibold text-lg mb-1">1️⃣ 도메인 중심의 CRUD 설계</h3>
+        <p>상품, 옵션, 이미지, 회원, 주문 등 주요 기능을 각 도메인 단위로 분리하고  
+        <b>Entity-DTO 매핑</b>과 <b>Service-Repository 구조</b>를 명확히 구분하여 유지보수성을 높였습니다.</p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-lg mb-1">2️⃣ 데이터 정규화 및 성능 최적화</h3>
+        <p>테이블 간 관계를 정규화하여 데이터 중복을 제거하고,  
+        필요 시 Lazy Fetch 전략을 통해 불필요한 조회를 최소화했습니다.</p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-lg mb-1">3️⃣ Flyway 기반 DB 마이그레이션</h3>
+        <p>버전별 SQL 마이그레이션을 자동화하여 모든 개발 환경에서 동일한 DB 구조를 유지했습니다.  
+        DB 변경 시 수동 적용 없이 자동 반영되도록 설정했습니다.</p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-lg mb-1">4️⃣ Redis 기반 주문 임시 저장</h3>
+        <p>사용자가 주문 과정을 진행할 때, 결제 완료 전 단계의 주문 정보를  
+        <b>Redis</b>에 임시로 저장해 안정적인 주문 흐름을 유지했습니다.  
+        이를 통해 서버 재시작 시에도 데이터 손실 없이 프로세스를 복원할 수 있습니다.</p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-lg mb-1">5️⃣ Swagger 기반 API 문서화</h3>
+        <p>Swagger 3.0을 적용해 프론트엔드 팀과의 협업 효율성을 높였으며,  
+        인증·비인증 API를 구분해 관리할 수 있도록 구성했습니다.</p>
+      </div>
     </div>
   </section>
 
   <!-- 시스템 아키텍처 -->
-  <section class="container mx-auto px-6 text-center">
-    <h2 class="section-title text-left">🧩 시스템 아키텍처</h2>
-    <div class="diagram mx-auto mt-10">
-      <div class="diagram-box">Front Office (별도 팀 개발)</div>
-      <div class="arrow">⇄</div>
-      <div class="diagram-box">Scheduler 동기화 (현재)</div>
-      <div class="arrow">➡</div>
-      <div class="diagram-box">Webhook Sync (예정)</div>
-      <div class="arrow">⬇</div>
-      <div class="diagram-box">Backoffice (Spring Boot)</div>
-      <div class="arrow">⬇</div>
-      <div class="diagram-box">PostgreSQL (RDS)</div>
-      <div class="arrow">➡</div>
-      <div class="diagram-box">Flyway Migration</div>
-      <div class="arrow">⬇</div>
-      <div class="diagram-box">Docker Container (MSA)</div>
+  <section class="bg-gray-50">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="section-title text-left">🧩 시스템 아키텍처</h2>
+      <div class="diagram mx-auto mt-10">
+        <div class="diagram-box">Client (Next.js)</div>
+        <div class="arrow">⬇</div>
+        <div class="diagram-box">Nginx Gateway</div>
+        <div class="arrow">⬇</div>
+        <div class="diagram-box">Spring Boot (Backend API)</div>
+        <div class="arrow">⬇</div>
+        <div class="diagram-box">PostgreSQL (RDS 예정)</div>
+        <div class="arrow">➡</div>
+        <div class="diagram-box">Redis (주문 임시 캐시)</div>
+        <div class="arrow">⬇</div>
+        <div class="diagram-box">Flyway Migration + Docker Compose</div>
+      </div>
+      <p class="text-gray-500 text-sm mt-5">
+        현재는 로컬 Docker Compose 기반 환경에서 운영 중이며,  
+        AWS 배포는 사업자등록 완료 이후 진행 예정입니다.
+      </p>
     </div>
-    <p class="text-gray-500 text-sm mt-5">
-      백오피스는 독립적으로 배포 및 운영되는 MSA 구조로, 데이터는 스케줄러를 통해 프론트오피스와 주기적으로 동기화됩니다.
-    </p>
   </section>
 
-  <!-- Swagger API -->
-  <section class="bg-gray-50">
+  <!-- 데이터베이스 구조 -->
+  <section>
     <div class="container mx-auto px-6">
-      <h2 class="section-title">📡 Swagger API 문서</h2>
-      <div class="gallery">
-        <div class="img-card"><img src="https://gupal05.github.io/assets/totalseller/swagger_team.png" alt="팀 API"><div class="img-caption-fixed">팀 API</div></div>
-        <div class="img-card"><img src="https://gupal05.github.io/assets/totalseller/swagger_user.png" alt="직원 API"><div class="img-caption-fixed">직원 API</div></div>
-        <div class="img-card"><img src="https://gupal05.github.io/assets/totalseller/swagger_user_auth.png" alt="직원 인증 API"><div class="img-caption-fixed">직원 Auth API</div></div>
-        <div class="img-card"><img src="https://gupal05.github.io/assets/totalseller/swagger_client.png" alt="클라이언트 API"><div class="img-caption-fixed">클라이언트 API</div></div>
-        <div class="img-card"><img src="https://gupal05.github.io/assets/totalseller/swagger_partner.png" alt="파트너 API"><div class="img-caption-fixed">파트너 API</div></div>
-        <div class="img-card"><img src="https://gupal05.github.io/assets/totalseller/swagger_offering.png" alt="오퍼링 API"><div class="img-caption-fixed">오퍼링 API</div></div>
-        <div class="img-card"><img src="https://gupal05.github.io/assets/totalseller/swagger_process.png" alt="프로세스 API"><div class="img-caption-fixed">프로세스 API</div></div>
-        <div class="img-card"><img src="https://gupal05.github.io/assets/totalseller/swagger_process_detail.png" alt="프로세스 상세 API"><div class="img-caption-fixed">프로세스 상세 API</div></div>
-        <div class="img-card"><img src="https://gupal05.github.io/assets/totalseller/swagger_process_template.png" alt="프로세스 템플릿 API"><div class="img-caption-fixed">프로세스 템플릿 API</div></div>
-        <div class="img-card"><img src="https://gupal05.github.io/assets/totalseller/swagger_report.png" alt="보고서 API"><div class="img-caption-fixed">보고서 API</div></div>
-        <div class="img-card"><img src="https://gupal05.github.io/assets/totalseller/swagger_document_file.png" alt="문서파일 API"><div class="img-caption-fixed">문서파일 API</div></div>
-        <div class="img-card"><img src="https://gupal05.github.io/assets/totalseller/swagger_subscribe.png" alt="구독 API"><div class="img-caption-fixed">구독 API</div></div>
-        <div class="img-card"><img src="https://gupal05.github.io/assets/totalseller/swagger_category.png" alt="카테고리 API"><div class="img-caption-fixed">카테고리 API</div></div>
-        <div class="img-card"><img src="https://gupal05.github.io/assets/totalseller/swagger_file.png" alt="파일 API"><div class="img-caption-fixed">파일 API</div></div>
-        <div class="img-card"><img src="https://gupal05.github.io/assets/totalseller/swagger_health.png" alt="Health API"><div class="img-caption-fixed">Health API</div></div>
+      <h2 class="section-title">🗄 데이터베이스 구조</h2>
+      <p class="text-gray-700 mb-8 leading-relaxed">
+        Arcsona의 데이터베이스는 상품, 옵션, 주문, 회원, 리뷰 등 주요 도메인을 중심으로 정규화되어 있으며,  
+        확장성과 무결성을 유지하기 위해 <b>명확한 FK 관계와 제약 조건</b>을 적용했습니다.
+      </p>
+      <div class="max-w-5xl mx-auto rounded-2xl shadow-lg overflow-hidden">
+        <img src="https://gupal05.github.io/assets/arcsona/arcsona_erd.png" alt="Arcsona ERD 다이어그램" class="w-full h-auto">
       </div>
+      <p class="text-center text-gray-500 text-sm mt-4">※ ERD는 핵심 도메인 중심으로 단순화한 버전입니다.</p>
     </div>
   </section>
 
@@ -159,21 +153,22 @@
   <section class="container mx-auto px-6 mt-20">
     <h2 class="section-title">💡 프로젝트 회고</h2>
     <p class="text-gray-700 leading-relaxed">
-      TotalSeller Backoffice는 단순한 관리 도구가 아닌, <b>조직과 계약의 흐름을 중심으로 한 내부 플랫폼</b>입니다.<br><br>
-      MSA 구조를 기반으로 프론트오피스와 완전히 분리된 독립 배포 환경을 구성했으며,  
-      <b>스케줄러 기반 데이터 동기화</b>를 통해 시스템 간 일관성과 안정성을 확보했습니다.<br><br>
-      Flyway를 도입하여 DB 마이그레이션의 이력 관리와 서버 간 일관성을 보장했고,  
-      Docker 기반의 컨테이너 환경을 통해 배포 자동화와 서비스 격리를 달성했습니다.<br><br>
-      이 프로젝트를 통해 <b>도메인 분리, 데이터 일관성, 비동기 구조 설계</b>에 대한 실무 경험을 확립했으며,  
-      내부 직원들의 업무 프로세스 효율성을 약 <b>90% 향상</b>시켰습니다.
+      Arcsona는 팀 단위 협업을 통해 실제 상용 수준의 쇼핑몰 아키텍처를 설계한 프로젝트입니다.<br><br>
+      주문·상품 관리 등 CRUD 기반의 핵심 기능을 구현하며,  
+      <b>도메인 모델링, DB 정규화, Redis 캐시, Flyway 마이그레이션</b>의 중요성을 깊이 이해했습니다.<br><br>
+      특히 주문 단계에서 Redis를 활용한 임시 저장 구조를 구현하며  
+      결제 안정성과 사용자 경험을 동시에 개선할 수 있었습니다.<br><br>
+      현재는 AWS 배포를 위한 인프라 준비 단계로,  
+      향후 상용화를 목표로 확장 중입니다.
     </p>
   </section>
 
   <footer class="py-6 text-center mt-16">
-    © 2025 TotalSeller Backoffice. All rights reserved.  
+    © 2025 Arcsona. All rights reserved.  
     <br><span class="text-gray-400 text-sm">Designed & Developed by 황영호</span>
   </footer>
 
+  <!-- Modal -->
   <div id="imageModal" class="modal" onclick="this.classList.remove('active')">
     <img id="modalImage" src="" alt="확대 이미지">
   </div>
