@@ -58,7 +58,7 @@
   <section class="gradient-bg py-20 text-center">
     <div class="container mx-auto px-6">
       <h1 class="text-5xl font-extrabold mb-4">TotalSeller Backoffice 프로젝트</h1>
-      <p class="text-lg opacity-90 mb-6">내부 계약·팀 관리 시스템 | Spring Boot · PostgreSQL · Flyway · Docker</p>
+      <p class="text-lg opacity-90 mb-6">내부 계약·팀 관리 시스템 | Spring Boot · PostgreSQL · Flyway · Docker · MSA</p>
       <a href="https://bo.totalseller.co.kr/" target="_blank" class="btn-primary">🔗 서비스 접속 (로그인 필요)</a>
 
       <div class="mt-8">
@@ -67,9 +67,9 @@
         <span class="tag">PostgreSQL</span>
         <span class="tag">Flyway</span>
         <span class="tag">Docker</span>
-        <span class="tag">Swagger</span>
         <span class="tag">Scheduler</span>
-        <span class="tag">CI/CD</span>
+        <span class="tag">MSA</span>
+        <span class="tag">Swagger</span>
       </div>
     </div>
   </section>
@@ -84,9 +84,10 @@
     </div>
 
     <p class="text-gray-700 mb-6">
-      <b>TotalSeller Backoffice</b>는 내부 직원들이 클라이언트 계약 및 오퍼링을 효율적으로 관리하기 위해 개발된 내부 시스템입니다.<br><br>
-      기존에는 엑셀과 카카오톡으로 계약 내용을 공유했기 때문에 담당자 파악, 계약 상태 확인, 팀 단위 진행 현황 파악이 매우 비효율적이었습니다.<br><br>
-      이러한 문제를 해결하기 위해 <b>팀 기반 승인 구조</b>와 <b>프로세스 자동화 시스템</b>을 도입했습니다.
+      <b>TotalSeller Backoffice</b>는 내부 직원들이 클라이언트 계약과 오퍼링을 효율적으로 관리하기 위해 제작된 <b>독립형 백오피스 시스템</b>입니다.<br><br>
+      프론트오피스는 별도의 개발팀이 담당하고 있으며, 백오피스는 완전히 분리된 <b>MSA(Microservice Architecture)</b> 구조로 구축되었습니다.<br><br>
+      두 시스템은 실시간으로 연결되지 않고, 현재는 <b>스케줄러(Scheduler)</b> 기반으로 데이터를 동기화하고 있으며  
+      향후에는 <b>Webhook 기반 이벤트 동기화</b>로 개선할 예정입니다.
     </p>
   </section>
 
@@ -111,18 +112,23 @@
   <section class="container mx-auto px-6 text-center">
     <h2 class="section-title text-left">🧩 시스템 아키텍처</h2>
     <div class="diagram mx-auto mt-10">
-      <div class="diagram-box">React (내부망 접근)</div>
+      <div class="diagram-box">Front Office (별도 팀 개발)</div>
+      <div class="arrow">⇄</div>
+      <div class="diagram-box">Scheduler 동기화 (현재)</div>
+      <div class="arrow">➡</div>
+      <div class="diagram-box">Webhook Sync (예정)</div>
       <div class="arrow">⬇</div>
-      <div class="diagram-box">Nginx Reverse Proxy</div>
-      <div class="arrow">⬇</div>
-      <div class="diagram-box">Spring Boot (Docker)</div>
+      <div class="diagram-box">Backoffice (Spring Boot)</div>
       <div class="arrow">⬇</div>
       <div class="diagram-box">PostgreSQL (RDS)</div>
       <div class="arrow">➡</div>
-      <div class="diagram-box">Flyway (DB 버전 관리)</div>
+      <div class="diagram-box">Flyway Migration</div>
       <div class="arrow">⬇</div>
-      <div class="diagram-box">Scheduler (자동 동기화)</div>
+      <div class="diagram-box">Docker Container (MSA)</div>
     </div>
+    <p class="text-gray-500 text-sm mt-5">
+      백오피스는 독립적으로 배포 및 운영되는 MSA 구조로, 데이터는 스케줄러를 통해 프론트오피스와 주기적으로 동기화됩니다.
+    </p>
   </section>
 
   <!-- Swagger API -->
@@ -153,9 +159,12 @@
   <section class="container mx-auto px-6 mt-20">
     <h2 class="section-title">💡 프로젝트 회고</h2>
     <p class="text-gray-700 leading-relaxed">
-      TotalSeller Backoffice는 단순한 CRUD 백오피스가 아닌 <b>조직형 협업 관리 플랫폼</b>입니다.<br><br>
-      팀 승인 흐름, 오퍼링 기반 계약 관리, 카테고리별 프로세스 자동화 등 실제 비즈니스 플로우를 완전히 디지털화했습니다.<br><br>
-      이를 통해 <b>JPA 성능 튜닝, Flyway 마이그레이션, Docker 배포 자동화</b> 등 실무 중심의 아키텍처 설계 경험을 깊이 쌓을 수 있었습니다.
+      TotalSeller Backoffice는 단순한 관리 도구가 아닌, <b>조직과 계약의 흐름을 중심으로 한 내부 플랫폼</b>입니다.<br><br>
+      MSA 구조를 기반으로 프론트오피스와 완전히 분리된 독립 배포 환경을 구성했으며,  
+      현재는 <b>스케줄러 기반 데이터 동기화</b>를 통해 두 시스템 간 일관성을 유지하고 있습니다.<br><br>
+      향후에는 <b>Webhook 이벤트 동기화</b>로 실시간 데이터 반영을 목표로 하고 있으며,  
+      확장성과 안정성을 모두 고려한 구조로 설계되었습니다.<br><br>
+      이를 통해 <b>도메인 분리, 데이터 일관성, 비동기 메시징 설계</b>에 대한 실무 경험을 확립할 수 있었습니다.
     </p>
   </section>
 
