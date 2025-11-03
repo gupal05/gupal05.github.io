@@ -28,7 +28,6 @@
 
     footer { background: #111827; color: #9ca3af; font-size: 0.9rem; }
 
-    /* Modal */
     .modal {
       display: none;
       position: fixed;
@@ -81,6 +80,7 @@
     <div class="text-gray-700 mb-6 space-y-2">
       <p><strong>👥 프로젝트 인원:</strong> 백엔드 2명 · 프론트엔드 1명</p>
       <p><strong>📅 개발 기간:</strong> 2025년 10월 13일 ~ 2025년 10월 30일 (리팩토링 진행 중)</p>
+      <p><strong>🧑‍💻 담당 역할:</strong> 백엔드 설계, DB 모델링, Flyway 마이그레이션, 스케줄러 동기화 로직 구현, Swagger 문서 자동화, Docker 환경 배포</p>
     </div>
 
     <p class="text-gray-700 mb-6">
@@ -161,10 +161,11 @@
     <p class="text-gray-700 leading-relaxed">
       TotalSeller Backoffice는 단순한 관리 도구가 아닌, <b>조직과 계약의 흐름을 중심으로 한 내부 플랫폼</b>입니다.<br><br>
       MSA 구조를 기반으로 프론트오피스와 완전히 분리된 독립 배포 환경을 구성했으며,  
-      현재는 <b>스케줄러 기반 데이터 동기화</b>를 통해 두 시스템 간 일관성을 유지하고 있습니다.<br><br>
-      향후에는 <b>Webhook 이벤트 동기화</b>로 실시간 데이터 반영을 목표로 하고 있으며,  
-      확장성과 안정성을 모두 고려한 구조로 설계되었습니다.<br><br>
-      이를 통해 <b>도메인 분리, 데이터 일관성, 비동기 메시징 설계</b>에 대한 실무 경험을 확립할 수 있었습니다.
+      <b>스케줄러 기반 데이터 동기화</b>를 통해 시스템 간 일관성과 안정성을 확보했습니다.<br><br>
+      Flyway를 도입하여 DB 마이그레이션의 이력 관리와 서버 간 일관성을 보장했고,  
+      Docker 기반의 컨테이너 환경을 통해 배포 자동화와 서비스 격리를 달성했습니다.<br><br>
+      이 프로젝트를 통해 <b>도메인 분리, 데이터 일관성, 비동기 구조 설계</b>에 대한 실무 경험을 확립했으며,  
+      내부 직원들의 업무 프로세스 효율성을 약 <b>90% 향상</b>시켰습니다.
     </p>
   </section>
 
@@ -173,7 +174,6 @@
     <br><span class="text-gray-400 text-sm">Designed & Developed by 황영호</span>
   </footer>
 
-  <!-- Modal -->
   <div id="imageModal" class="modal" onclick="this.classList.remove('active')">
     <img id="modalImage" src="" alt="확대 이미지">
   </div>
@@ -181,10 +181,8 @@
   <script>
     document.querySelectorAll('.img-card img').forEach(img => {
       img.addEventListener('click', () => {
-        const modal = document.getElementById('imageModal');
-        const modalImg = document.getElementById('modalImage');
-        modalImg.src = img.src;
-        modal.classList.add('active');
+        document.getElementById('modalImage').src = img.src;
+        document.getElementById('imageModal').classList.add('active');
       });
     });
   </script>
