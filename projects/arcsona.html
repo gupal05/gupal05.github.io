@@ -127,10 +127,6 @@
         <div class="arrow">⬇</div>
         <div class="diagram-box">Flyway Migration + Docker Compose</div>
       </div>
-      <p class="text-gray-500 text-sm mt-5">
-        현재는 로컬 Docker Compose 기반 환경에서 운영 중이며,  
-        AWS 배포는 사업자등록 완료 이후 진행 예정입니다.
-      </p>
     </div>
   </section>
 
@@ -138,14 +134,38 @@
   <section>
     <div class="container mx-auto px-6">
       <h2 class="section-title">🗄 데이터베이스 구조</h2>
-      <p class="text-gray-700 mb-8 leading-relaxed">
-        Arcsona의 데이터베이스는 상품, 옵션, 주문, 회원, 리뷰 등 주요 도메인을 중심으로 정규화되어 있으며,  
-        확장성과 무결성을 유지하기 위해 <b>명확한 FK 관계와 제약 조건</b>을 적용했습니다.
-      </p>
-      <div class="max-w-5xl mx-auto rounded-2xl shadow-lg overflow-hidden">
-        <img src="https://gupal05.github.io/assets/arcsona/arcsona_erd.png" alt="Arcsona ERD 다이어그램" class="w-full h-auto">
+      <div class="max-w-5xl mx-auto rounded-2xl shadow-lg overflow-hidden mb-10">
+        <img src="https://gupal05.github.io/assets/arcsona/arcsona_erd.png" alt="Arcsona ERD" class="w-full h-auto">
       </div>
-      <p class="text-center text-gray-500 text-sm mt-4">※ ERD는 핵심 도메인 중심으로 단순화한 버전입니다.</p>
+      <p class="text-center text-gray-500 text-sm mb-6">※ ERD는 핵심 도메인 중심으로 단순화한 버전입니다.</p>
+    </div>
+  </section>
+
+  <!-- API 문서 및 테스트 -->
+  <section class="bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title">📘 API 문서 및 테스트</h2>
+      <p class="text-gray-700 mb-8 leading-relaxed">
+        <b>Arcsona</b>는 Swagger와 Postman을 기반으로 모든 API를 테스트하고 문서화했습니다.<br>
+        관리자, 회원, 공개 API를 각각 분리하여 협업 효율성을 높였으며,  
+        각 영역별 API는 명확한 역할과 응답 구조를 갖습니다.
+      </p>
+
+      <div class="gallery">
+        <div class="img-card"><img src="https://gupal05.github.io/assets/arcsona/postman_login.png" alt="Postman 로그인"><div class="img-caption-fixed">Postman — 로그인 요청 테스트</div></div>
+
+        <div class="img-card"><img src="https://gupal05.github.io/assets/arcsona/swagger_admin1.png" alt="Swagger 관리자 1"><div class="img-caption-fixed">Swagger — 관리자 API ①</div></div>
+        <div class="img-card"><img src="https://gupal05.github.io/assets/arcsona/swagger_admin2.png" alt="Swagger 관리자 2"><div class="img-caption-fixed">Swagger — 관리자 API ②</div></div>
+        <div class="img-card"><img src="https://gupal05.github.io/assets/arcsona/swagger_admin3.png" alt="Swagger 관리자 3"><div class="img-caption-fixed">Swagger — 관리자 API ③</div></div>
+
+        <div class="img-card"><img src="https://gupal05.github.io/assets/arcsona/swagger_member1.png" alt="Swagger 회원 1"><div class="img-caption-fixed">Swagger — 회원 API ①</div></div>
+        <div class="img-card"><img src="https://gupal05.github.io/assets/arcsona/swagger_member2.png" alt="Swagger 회원 2"><div class="img-caption-fixed">Swagger — 회원 API ②</div></div>
+        <div class="img-card"><img src="https://gupal05.github.io/assets/arcsona/swagger_member3.png" alt="Swagger 회원 ③"><div class="img-caption-fixed">Swagger — 회원 API ③</div></div>
+        <div class="img-card"><img src="https://gupal05.github.io/assets/arcsona/swagger_member4.png" alt="Swagger 회원 ④"><div class="img-caption-fixed">Swagger — 회원 API ④</div></div>
+
+        <div class="img-card"><img src="https://gupal05.github.io/assets/arcsona/swagger_public1.png" alt="Swagger 공개 1"><div class="img-caption-fixed">Swagger — 공개 API ①</div></div>
+        <div class="img-card"><img src="https://gupal05.github.io/assets/arcsona/swagger_public2.png" alt="Swagger 공개 2"><div class="img-caption-fixed">Swagger — 공개 API ②</div></div>
+      </div>
     </div>
   </section>
 
@@ -164,8 +184,8 @@
   </section>
 
   <footer class="py-6 text-center mt-16">
-    © 2025 Arcsona. All rights reserved.  
-    <br><span class="text-gray-400 text-sm">Designed & Developed by 황영호</span>
+    © 2025 Arcsona. All rights reserved.<br>
+    <span class="text-gray-400 text-sm">Designed & Developed by 황영호</span>
   </footer>
 
   <!-- Modal -->
