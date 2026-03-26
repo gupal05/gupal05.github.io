@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ToTPANG TotalSeller Mall 프로젝트 포트폴리오 | 황영호</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { background-color: #f9fafb; color: #1f2937; font-family: 'Noto Sans KR', sans-serif; line-height: 1.7; word-break: keep-all; overflow-wrap: break-word; }
+    section { padding: 80px 0; }
+    @media (max-width: 640px) { section { padding: 48px 0; } }
+    .section-title { font-size: 1.875rem; font-weight: 700; margin-bottom: 2rem; border-left: 5px solid #3b82f6; padding-left: 12px; }
+    .gradient-bg { background: linear-gradient(120deg, #2563eb 0%, #7c3aed 100%); color: white; }
+    .btn-primary { background-color: white; color: #2563eb; font-weight: 600; padding: 12px 24px; border-radius: 8px; transition: all 0.3s ease; }
+    .btn-primary:hover { background-color: #f1f5f9; transform: translateY(-2px); }
+    .btn-outline { border: 1px solid rgba(255,255,255,0.7); background: transparent; color: white; font-weight: 600; padding: 12px 24px; border-radius: 8px; transition: all 0.3s ease; }
+    .btn-outline:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+    .tag { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; margin: 4px; }
+
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 24px; }
+    .img-card { position: relative; overflow: hidden; border-radius: 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); background: white; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
+    .img-card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
+    .img-card img { width: 100%; height: 280px; object-fit: cover; object-position: top center; transition: transform 0.4s ease; }
+    .img-card:hover img { transform: scale(1.05); }
+    .img-caption-fixed { background: #f9fafb; text-align: center; font-size: 0.9rem; padding: 10px; color: #374151; border-top: 1px solid #e5e7eb; }
+
+    .diagram { position: relative; background: white; border-radius: 16px; padding: 32px 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.07); text-align: center; }
+    @media (min-width: 640px) { .diagram { padding: 40px; } }
+    .diagram-box { display: inline-block; background: #eff6ff; color: #1e3a8a; font-weight: 600; border-radius: 12px; padding: 12px 16px; margin: 8px 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); font-size: 0.875rem; }
+    @media (min-width: 640px) { .diagram-box { padding: 12px 20px; margin: 10px; font-size: 1rem; } }
+    .arrow { font-size: 1.25rem; color: #6b7280; margin: 0 6px; display: block; }
+    @media (min-width: 640px) { .arrow { font-size: 1.5rem; margin: 0 8px; } }
+
+    .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); justify-content: center; align-items: center; }
+    .modal img { max-width: 90%; max-height: 85%; border-radius: 10px; box-shadow: 0 0 25px rgba(255,255,255,0.2); }
+    .modal.active { display: flex; animation: fadeIn 0.4s ease; }
+    @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+
+    footer { background: #111827; color: #9ca3af; font-size: 0.9rem; }
+  </style>
+</head>
+
+<body>
+  <section class="gradient-bg py-20 text-center">
+    <div class="container mx-auto px-6">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 px-2 leading-tight">ToTPANG (TotalSeller Mall)</h1>
+      <p class="text-lg opacity-90 mb-6">폐쇄몰 기반 쿠팡형 쇼핑 경험 제공 | 2025.12 ~ 2026.02</p>
+
+      <div class="flex flex-col sm:flex-row gap-3 justify-center mt-6">
+        <a href="https://totpang.com/" target="_blank" rel="noopener noreferrer" class="btn-primary">🔗 운영 사이트</a>
+        <a href="../index.html" class="btn-outline">← 포트폴리오 메인</a>
+      </div>
+
+      <div class="mt-8 text-left max-w-3xl mx-auto">
+        <div class="bg-white bg-opacity-10 p-5 rounded-xl">
+          <p class="text-sm opacity-90">
+            프로젝트 인원: <b>프론트엔드 2명 · 백엔드 3명</b><br>
+            제가 담당한 역할: <b>이벤트 기능, 로그인 기능, 상품 검색 기능, 카테고리별 상품 조회 기능</b>
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-8">
+        <span class="tag">Spring Boot</span>
+        <span class="tag">Spring Security</span>
+        <span class="tag">JPA</span>
+        <span class="tag">PostgreSQL (RDS)</span>
+        <span class="tag">Redis</span>
+        <span class="tag">AWS EC2</span>
+        <span class="tag">AWS S3</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Nginx</span>
+        <span class="tag">Swagger</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="container mx-auto px-6">
+    <h2 class="section-title">프로젝트 개요</h2>
+    <div class="text-gray-700 leading-relaxed text-sm md:text-base">
+      <p class="mb-6">
+        <b><a href="https://totpang.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">ToTPANG</a></b>은 특정 조직·회원만 접근할 수 있는 <b>폐쇄몰</b> 구조의 커머스 서비스로,
+        오픈마켓과 유사한 탐색·검색·카테고리 흐름을 제공하는 것을 목표로 했습니다.
+      </p>
+      <p>
+        저는 <b>이벤트(백엔드·연동)</b>, <b>로그인</b>, <b>상품 검색 API</b>, <b>카테고리별 상품 조회</b>를 중심으로
+        프론트와 맞물리는 API 설계·구현과, 검색 구간에서의 <b>조회 성능 개선</b>을 담당했습니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- 시스템 아키텍처 -->
+  <section class="bg-gray-50">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="section-title text-left">🧩 시스템 아키텍처</h2>
+      <div class="diagram mx-auto mt-10 max-w-3xl">
+        <div class="diagram-box">Client (프론트엔드 · 별도 담당)</div>
+        <div class="arrow">⬇</div>
+        <div class="diagram-box">Nginx Reverse Proxy</div>
+        <div class="arrow">⬇</div>
+        <div class="diagram-box">Spring Boot REST API · Spring Security (Docker)</div>
+        <div class="arrow">⬇</div>
+        <div class="diagram-box">PostgreSQL (RDS)</div>
+        <div class="arrow">➡</div>
+        <div class="diagram-box">AWS S3 (상품·스토어 이미지)</div>
+      </div>
+      <p class="text-gray-500 text-sm mt-5 max-w-2xl mx-auto leading-relaxed">
+        <b>Redis</b>는 JWT 블랙리스트·일부 캐시·찜/좋아요 등 상태 관리에 사용합니다.<br class="hidden sm:inline" />
+        프론트엔드는 별도 인원이 담당하며, 저는 <b>REST API·인증 스펙</b>을 맞추는 쪽에 집중했습니다. 운영 환경에서는 <b>리버스 프록시 뒤</b>에서 백엔드가 동작하는 구조입니다.
+      </p>
+    </div>
+  </section>
+
+  <section class="container mx-auto px-6">
+      <h2 class="section-title">구현 포인트</h2>
+      <div class="space-y-6 text-gray-700 leading-relaxed">
+        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+          <h3 class="font-semibold text-lg mb-2">이벤트 기능</h3>
+          <p class="text-sm md:text-base mb-3">
+            이벤트·프로모션과 연동되는 데이터 조회 및 비즈니스 로직을 구현했습니다.
+            다만 <b>이벤트 전용 목록 페이지는 아직 기획상 노출되지 않아</b>, 별도의 이벤트 화면 캡처는 없습니다.
+            메인 영역의 배너·내비게이션의 <b>이벤트 진입</b> 등과 연계될 수 있도록 API·도메인을 정리해 두었습니다.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+          <h3 class="font-semibold text-lg mb-2">로그인</h3>
+          <div class="text-sm md:text-base space-y-3">
+            <p>
+              <b>API</b>는 <code class="bg-gray-100 px-1 rounded text-xs">POST /api/auth/login</code>로 두고, 요청 본문에 이메일·비밀번호를 받습니다.
+              브루트포스 완화를 위해 로그인 엔드포인트에는 <b>Rate Limit</b>(예: 5분당 요청 횟수 상한 초과 시 차단)을 걸어 두었습니다.
+            </p>
+            <p>
+              <b>인증 처리</b>는 Spring Security의 <code class="bg-gray-100 px-1 rounded text-xs">AuthenticationManager</code>로
+              <code class="bg-gray-100 px-1 rounded text-xs">UsernamePasswordAuthenticationToken</code>을 검증하는 방식입니다.
+              비밀번호는 <code class="bg-gray-100 px-1 rounded text-xs">BCryptPasswordEncoder</code>로 저장·검증하고,
+              <code class="bg-gray-100 px-1 rounded text-xs">DaoAuthenticationProvider</code> +
+              <code class="bg-gray-100 px-1 rounded text-xs">UserDetailsService</code> 조합으로 실제 계정 조회와 권한 로딩을 맞췄습니다.
+            </p>
+            <p>
+              로그인 성공 시 사용자 <b>상태(예: 활성 계정 여부)</b>를 확인하고, <b>마지막 로그인 시각</b>을 갱신합니다.
+              한 사용자가 여러 역할을 가질 수 있어, 역할 목록 중 <b>우선순위가 높은 역할 하나</b>를 골라 JWT 클레임에 반영합니다.
+            </p>
+            <p>
+              <b>JWT(Access)</b>는 이메일과 역할 정보를 담아 HS256으로 발급하고, <b>Refresh Token</b>은 별도로 발급해 이후
+              <code class="bg-gray-100 px-1 rounded text-xs">/api/auth/refresh</code>에서 액세스 토큰을 갱신할 수 있게 했습니다.
+              이후 요청은 <code class="bg-gray-100 px-1 rounded text-xs">Authorization: Bearer …</code> 헤더를 필터에서 검증·주입하고,
+              로그아웃 시에는 Redis에 <b>액세스 토큰 블랙리스트</b>를 등록하고 리프레시 토큰을 무효화하는 흐름까지 연결했습니다.
+            </p>
+            <p>
+              클라이언트(프론트엔드)에서는 로그인 API 성공 응답을 받은 뒤, 액세스·리프레시 토큰과 사용자 정보를
+              <b>HttpOnly 쿠키</b> 등으로 보관하는 흐름으로 붙어 있으며, 그에 맞춰 토큰 발급·갱신 API 스펙을 정리했습니다.
+            </p>
+          </div>
+        </div>
+        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+          <h3 class="font-semibold text-lg mb-2">상품 검색 API</h3>
+          <p class="text-sm md:text-base mb-3">
+            키워드 기반으로 대량의 상품 메타데이터(노출용 필드)를 한 번에 내려주는 검색 API를 구현했습니다.
+            초기에는 조인·정렬·카운트까지 한꺼번에 무거워지면서 <b>첫 응답이 느리게</b> 느껴지는 구간이 있었고, 이를 줄이기 위해 쿼리와 응답 구조를 단계적으로 다듬었습니다.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+          <h3 class="font-semibold text-lg mb-2">카테고리별 상품 조회</h3>
+          <p class="text-sm md:text-base">
+            대분류·소분류 트리와 목록 그리드에 맞춰, 카테고리 조건·정렬·페이지 단위로 상품 목록을 일관되게 조회할 수 있도록 API를 구성했습니다.
+            검색과 마찬가지로 <b>불필요한 컬럼 로드와 반복 조회</b>가 늘지 않도록 주의했습니다.
+          </p>
+        </div>
+      </div>
+  </section>
+
+  <section class="container mx-auto px-6">
+    <h2 class="section-title">상품 검색: 조회 지연 원인과 쿼리 개선</h2>
+    <div class="text-gray-700 leading-relaxed text-sm md:text-base space-y-4">
+      <p>
+        검색 결과 화면은 단순히 “목록을 그린다”는 수준을 넘어, <b>매칭 건수·정렬·페이지네이션·각 카드에 필요한 가격·배지·이미지 정보</b>까지 한 요청에 녹아 있습니다.
+        초기 구현에서는 이 과정에서 DB가 한 번에 처리해야 할 범위가 넓어지면서, 네트워크 이전 단계에서 이미 <b>응답 지연의 병목</b>이 되었습니다.
+      </p>
+      <p>
+        먼저 실제로 느려지는 구간이 <b>목록 본문 조회</b>인지, <b>전체 건수(count)</b>인지, 혹은 <b>연관 테이블을 거치는 부가 정보</b>인지를 나누어 확인했습니다.
+        목록 API에서 화면에 쓰이지 않는 컬럼을 함께 읽거나, 동일 키_set에 대해 반복적으로 세부 정보를 가져오는 패턴이 있으면 응답 시간이 체감될 수 있어, <b>프로젝션(필요한 컬럼만 선택)</b>과 <b>배치 단위로 묶어 조회</b>하는 방향으로 정리했습니다.
+      </p>
+      <p>
+        조건 절과 정렬에 쓰이는 컬럼은 실제 실행 계획을 보면서 <b>인덱스가 의도대로 타는지</b>를 점검했습니다.
+        검색어 매칭 방식에 따라 인덱스 활용도가 달라질 수 있어, 앞부분 일치·범위 검색 등 <b>운영 데이터 분포에 맞는 형태</b>로 조건을 재구성하고, 불필요한 함수 호출·암시적 형변환이 들어가지 않도록 다듬었습니다.
+      </p>
+      <p>
+        전체 검색 건수는 UI에 꼭 필요하지만, 목록과 동일한 무게의 조인을 그대로 실어 나르기보다 <b>가능한 한 가벼운 경로</b>로 분리하거나, 동일 요청 내에서라도 <b>쿼리 구조를 단순화</b>해 불필요한 정렬·중복 제거 비용을 줄이는 쪽을 택했습니다.
+        그 결과 체감상 <b>첫 검색 결과가 화면에 도달하기까지의 로딩 시간이 눈에 띄게 짧아졌고</b>, 이후에도 정렬·페이지 이동 시 같은 패턴이 반복되지 않도록 API 스펙을 고정해 두었습니다.
+      </p>
+      <p class="text-gray-500 text-sm">
+        ※ 구체적인 DB 제품·인덱스 정의·ORM 설정은 팀/서비스 정책상 공개하지 않으며, 위 내용은 성능 개선 시 일반적으로 적용한 <b>원인 분리 → 실행 계획 확인 → 조회 범위 축소</b> 흐름을 기준으로 서술했습니다.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container mx-auto px-6">
+      <h2 class="section-title">📸 화면 미리보기</h2>
+      <p class="text-gray-600 text-sm mb-6">이벤트 전용 페이지는 미구축 상태라, 메인·로그인·검색·카테고리 화면 위주로 정리했습니다.</p>
+      <div class="gallery">
+        <div class="img-card"><img src="../assets/totalseller-mall/main.png" alt="메인 화면"><div class="img-caption-fixed">메인 화면</div></div>
+        <div class="img-card"><img src="../assets/totalseller-mall/login.png" alt="로그인 화면"><div class="img-caption-fixed">로그인</div></div>
+        <div class="img-card"><img src="../assets/totalseller-mall/search.png" alt="상품 검색 결과 화면"><div class="img-caption-fixed">상품 검색 결과</div></div>
+        <div class="img-card"><img src="../assets/totalseller-mall/category.png" alt="카테고리별 상품 조회 화면"><div class="img-caption-fixed">카테고리 상품 목록</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container mx-auto px-6 mt-20">
+    <h2 class="section-title">회고</h2>
+    <p class="text-gray-700 leading-relaxed">
+      폐쇄몰에서도 사용자 입장에서는 “빠르게 찾고, 바로 비교하고, 이어서 결제로 간다”는 흐름이 중요합니다.
+      로그인·검색·카테고리는 그 <b>입구</b>에 해당하는 기능이라, 화면과 API가 어긋나지 않게 계약(응답 스키마·에러 코드)을 맞추는 일과 함께,
+      검색처럼 <b>데이터량이 한 번에 몰리는 구간</b>에서는 쿼리를 손봐 체감 속도를 끌어올린 경험이 특히 기억에 남습니다.
+    </p>
+  </section>
+
+  <footer class="py-6 text-center mt-16">
+    © 2025 ToTPANG. All rights reserved.<br>
+    <span class="text-gray-400 text-sm">Designed & Developed by 황영호</span>
+  </footer>
+
+  <!-- Modal -->
+  <div id="imageModal" class="modal" onclick="this.classList.remove('active')">
+    <img id="modalImage" src="" alt="확대 이미지">
+  </div>
+
+  <script>
+    document.querySelectorAll('.img-card img').forEach(img => {
+      img.addEventListener('click', () => {
+        document.getElementById('modalImage').src = img.src;
+        document.getElementById('imageModal').classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
